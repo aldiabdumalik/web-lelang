@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -18,6 +19,7 @@ export default function PageLayout(pageProps: PageLayoutProps) {
       </Head>
       <Navbar />
       {children}
+      <Footer />
     </div>
   )
 }
