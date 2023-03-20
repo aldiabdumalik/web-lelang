@@ -1,6 +1,8 @@
 import PageLayout from '@/layouts/PageLayout';
 import Header from '@/components/Header'
-import GuideCard from '@/components/Card/GuideCard'
+// import GuideCard from '@/components/Card/GuideCard'
+// import CollapseCard from '@/components/Card/CollapseCard'
+import { GuideCard, CollapseCard } from '@/components/Card/'
 import Image from "next/image";
 import Link from "next/link";
 import React from 'react'
@@ -42,6 +44,18 @@ function Home() {
             <p className="text-lg font-normal text-secondary">Lihat Selengkapnya </p>
             <Image src={"/img/icon/arrow-right.svg"} alt="arrow-right" width={10} height={17} />
           </Link>
+        </div>
+
+        <div className="flex flex-col w-full gap-y-12 sm:gap-y-12 px-4 sm:px-36 py-6 sm:py-18 bg-white">
+          <h4 className="text-primary font-bold text-40">Frequently Asked Question</h4>
+          <div className="flex flex-col gap-y-4">
+            <CollapseCard title={"Informasi apa sajakah yang disajikan dalam website info lelang BRI ini?"} />
+            <CollapseCard title={"Bagaimana cara mengikuti lelang di Infolelang BRI?"} />
+            <CollapseCard title={"Siapakah pihak penjual dalam penjualan dengan mekanisme lelang?"} />
+            <CollapseCard title={'Apa yang dimaksud dengan status "dilelang"?'} />
+            <CollapseCard title={'Apa yang dimaksud dengan status "dijual damai"?'} />
+            <CollapseCard title={"Siapakah pihak penjual dalam penjualan dengan mekanisme lelang?"} />
+          </div>
         </div>
     </PageLayout>
   )
