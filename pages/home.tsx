@@ -15,7 +15,7 @@ function Home() {
       {/* Sale */}
       <div className="w-full px-4 sm:px-36 bg-white my-24">
         <h4 className="font-bold text-40 text-primary mb-8">Lelang Terbaru</h4>
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <Product
             title="Rumah Minimalis Green Residence 1"
             location="Sleman, Yogyakarta"
