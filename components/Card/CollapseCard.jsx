@@ -5,9 +5,9 @@ function CollapseCard({title}) {
   return (
     <div className="collapse border peer-checked:bg-secondary rounded-xl">
         <input type="checkbox" /> 
-        <div className="collapse-title flex justify-between items-center">
+        <div className="collapse-title flex justify-between gap-x-4 items-center">
           <p className="font-medium text-base">{title}</p>
-          <Image src={"/img/icon/arrow-down-square.svg"} alt={"arrow"} width={40} height={40} />
+          <Image src={"/img/icon/arrow-down-square.svg"} alt={"arrow"} width={0} height={0} className="w-7 sm:w-10 h-7 sm:h-10" />
         </div>
         <div className="collapse-content peer-checked:bg-secondary"> 
           <div className="w-full h-2 border-b"></div>
