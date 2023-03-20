@@ -2,7 +2,7 @@ import PageLayout from '@/layouts/PageLayout';
 import Header from '@/components/Header'
 // import GuideCard from '@/components/Card/GuideCard'
 // import CollapseCard from '@/components/Card/CollapseCard'
-import { GuideCard, CollapseCard } from '@/components/Card/'
+import { GuideCard, CollapseCard, TestiCard } from '@/components/Card/'
 import Image from "next/image";
 import Link from "next/link";
 import React from 'react'
@@ -56,6 +56,36 @@ function Home() {
             <CollapseCard title={'Apa yang dimaksud dengan status "dijual damai"?'} />
             <CollapseCard title={"Siapakah pihak penjual dalam penjualan dengan mekanisme lelang?"} />
           </div>
+        </div>
+
+        <div className="flex flex-col w-full flex flex-col sm:h-644px bg-neutral-20 px-4 sm:px-36 py-6 sm:py-18 gap-y-6">
+          <h4 className="text-primary font-bold text-40">Apa Kata Mereka tentang Infolelang?</h4>
+          <div className="flex flex-col sm:flex-row justify-between sm:items-center">
+            <p className="text-lg font-normal text-primary-text">Testimoni mereka yang telah menggunakan infolelang</p>
+            <Link href={"/"} className="hidden sm:flex sm:gap-x-4 items-center">
+                <p className="text-lg font-normal text-secondary">Lihat Selengkapnya </p>
+                <Image src={"/img/icon/arrow-right.svg"} alt="arrow-right" width={10} height={17} />
+            </Link>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-y-4 sm:gap-y-0 sm:gap-x-6">
+            <TestiCard
+              text={"Saya sangat senang mengikuti lelang di infolelang BRI, lorem ipsum sir dolor lorem ipsum sir Overall barangnya sangat memuaskan!"}
+              name={"Sofia"}
+              status={"Striker"} />
+            <TestiCard
+              text={"Saya sangat senang mengikuti lelang di infolelang BRI, lorem ipsum sir dolor lorem ipsum sir Overall barangnya sangat memuaskan!"}
+              name={"Aldi"}
+              status={"Goal Keeper"} />
+            <TestiCard
+              text={"Saya sangat senang mengikuti lelang di infolelang BRI, lorem ipsum sir dolor lorem ipsum sir Overall barangnya sangat memuaskan!"}
+              name={"Citra"}
+              status={"Midfielder"} />
+            
+          </div>
+          <Link href={"/"} className="flex justify-center sm:hidden gap-x-2 sm:gap-x-4 items-center">
+            <p className="text-lg font-normal text-secondary">Lihat Selengkapnya </p>
+            <Image src={"/img/icon/arrow-right.svg"} alt="arrow-right" width={10} height={17} />
+          </Link>
         </div>
     </PageLayout>
   )
