@@ -14,6 +14,7 @@ module.exports = {
         'primary-30': '#6CBAF8',
         'primary-text': '#171A1C',
         'secondary-text': '#73808C',
+        "neutral-20": "#F9FAFB",
       },
       height: {
         '720px': '45rem',
@@ -31,7 +32,7 @@ module.exports = {
         'banner-mobile': "url('../public/img/banner-mobile.png')",
       },
       backgroundPosition: {
-        'top-4': 'right 55% bottom 100%',
+        'top-4': 'right 57% bottom 100%',
       },
       fontSize: {
         '40': '40px',
