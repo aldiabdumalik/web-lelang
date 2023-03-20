@@ -14,15 +14,13 @@ function Home() {
         <div className="flex flex-col px-4 sm:px-36 py-6 sm:py-18 gap-y-6 w-full min-h-552px bg-neutral-20">
           <h4 className="font-bold text-40 text-primary">Bagaimana Sistem Infolelang?</h4>
           <div className="flex flex-col sm:flex-row justify-between sm:items-center">
-            <p className="text-lg font-normal ">Berikut adalah panduan singkat bagaimana kamu bisa mendapatkan properti atau kendaraan impianmu</p>
-                <Link href={"/"}>
-                    <div className="hidden sm:flex sm:gap-x-4 items-center">
-                        <p className="text-lg font-normal text-secondary">Lihat Selengkapnya </p>
-                        <Image src={"/img/icon/arrow-right.svg"} alt="arrow-right" width={10} height={17} />
-                    </div>
-                </Link>
+            <p className="text-lg font-normal text-primary-text ">Berikut adalah panduan singkat bagaimana kamu bisa mendapatkan properti atau kendaraan impianmu</p>
+            <Link href={"/"} className="hidden sm:flex sm:gap-x-4 items-center">
+                <p className="text-lg font-normal text-secondary">Lihat Selengkapnya </p>
+                <Image src={"/img/icon/arrow-right.svg"} alt="arrow-right" width={10} height={17} />
+            </Link>
           </div>
-          <div className="flex flex-col sm:flex-row sm:gap-x-6 items-center w-full mt-6">
+          <div className="flex flex-col sm:flex-row gap-y-4 sm:gap-y-0 sm:gap-x-6 items-center w-full mt-6">
             <GuideCard 
                 icon={"/img/icon/search-square.svg"} 
                 number={"01"} title={"Cari Aset"} 
@@ -40,10 +38,10 @@ function Home() {
                 number={"04"} title={"Ajukan KPR"} 
                 desc={"Ajukan KPR asset sesuai kemampuan kamu"} />
           </div>
-          <div className="flex justify-center sm:hidden gap-x-2 sm:gap-x-4 items-center">
-              <p className="text-lg font-normal text-secondary">Lihat Selengkapnya </p>
-              <img src="/img/icon/arrow-right.svg" width={10} />
-            </div>
+          <Link href={"/"} className="flex justify-center sm:hidden gap-x-2 sm:gap-x-4 items-center">
+            <p className="text-lg font-normal text-secondary">Lihat Selengkapnya </p>
+            <Image src={"/img/icon/arrow-right.svg"} alt="arrow-right" width={10} height={17} />
+          </Link>
         </div>
     </PageLayout>
   )
