@@ -12,7 +12,7 @@ export default function Detail() {
     <PageLayout>
       <div className="container flex flex-col items-center">
         <div className="w-full md:w-2/3 pt-7 pb-8">
-          <div className="flex items-center justify-between gap-5">
+          <div className="flex items-center justify-between gap-5 flex-col md:flex-row">
             <Link href={'/'} className="flex items-center gap-2">
               <Image src={'/icons/arrow_back.svg'} width={20} height={20} alt="" priority />
               <span className="text-sm font-semibold text-primary">Kembali Ke Pencarian</span>
@@ -43,7 +43,7 @@ export default function Detail() {
           </div>
         </div>
         <div className="w-full md:w-2/3 mt-8">
-          <div className="flex items-start gap-10">
+          <div className="flex items-start gap-10 flex-col md:flex-row">
             <div className="w-full">
               <div className="relative">
                 <div className="flex items-center gap-2.5">
@@ -94,7 +94,7 @@ export default function Detail() {
                 <div className="mt-12">
                   <div className="p-4 border rounded-md">
                     <span className="text-lg font-semibold">Developer</span>
-                    <div className="mt-4 flex justify-between items-center gap-3">
+                    <div className="mt-4 flex justify-between gap-3 items-start flex-col md:flex-row md:items-center">
                       <div className="flex items-start gap-2">
                         <div className="w-12 h-12 rounded-full bg-primary flex justify-center items-center">
                           <span className="text-white font-semibold">SM</span>
@@ -115,6 +115,205 @@ export default function Detail() {
                         </button>
                       </div>
                     </div>
+                  </div>
+                  {/* Kelengkapan Rumah */}
+                  <div className="mt-4 p-4 border rounded-md">
+                    <span className="text-lg font-semibold">Kelengkapan Rumah</span>
+                    <div className="mt-5 grid grid-cols-2 gap-3">
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/cooking.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Dapur</span>
+                        </div>
+                        <span className="text-xs font-bold">Ya</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/phone_1.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Jalur Telpon</span>
+                        </div>
+                        <span className="text-xs font-bold">Ya</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/lightning.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Jalur Listrik</span>
+                        </div>
+                        <span className="text-xs font-bold">Ya</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/living.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Ruang Keluarga</span>
+                        </div>
+                        <span className="text-xs font-bold">Ya</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/drop_water.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Jalur PDAM</span>
+                        </div>
+                        <span className="text-xs font-bold">Ya</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/laptop.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Ruang Kerja</span>
+                        </div>
+                        <span className="text-xs font-bold">Ya</span>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Akses */}
+                  <div className="mt-4 p-4 border rounded-md">
+                    <span className="text-lg font-semibold">Akses</span>
+                    <div className="mt-5 grid grid-cols-2 gap-3">
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/first_aid.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Rumah Sakit</span>
+                        </div>
+                        <span className="text-xs font-bold">Ya</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/shopping_bag.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Mall</span>
+                        </div>
+                        <span className="text-xs font-bold">Tidak</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/bus.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Jalan Tol</span>
+                        </div>
+                        <span className="text-xs font-bold">Tidak</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/train.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Stasiun</span>
+                        </div>
+                        <span className="text-xs font-bold">Ya</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/backpack.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Sekolah</span>
+                        </div>
+                        <span className="text-xs font-bold">Tidak</span>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Fasilitas */}
+                  <div className="mt-4 p-4 border rounded-md">
+                    <span className="text-lg font-semibold">Fasilitas</span>
+                    <div className="mt-5 grid grid-cols-2 gap-3">
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/swim.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Kolam Renang</span>
+                        </div>
+                        <span className="text-xs font-bold">Ya</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/club_house.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Club House</span>
+                        </div>
+                        <span className="text-xs font-bold">Ya</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/parking.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Tempat Parkir</span>
+                        </div>
+                        <span className="text-xs font-bold">Panas & Dingin</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/CCTV.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Keamanan</span>
+                        </div>
+                        <span className="text-xs font-bold">CCTV, One Gate</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 w-full md:w-1/2">
+                          <Image src={'/icons/tree.svg'} width={20} height={20} alt="" priority />
+                          <span className="text-xs">Penghijauan</span>
+                        </div>
+                        <span className="text-xs font-bold">8m2</span>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Informasi */}
+                  <div className="mt-4 p-4 border rounded-md">
+                    <span className="text-lg font-semibold">Informasi Properti</span>
+                    <div className="mt-5 grid grid-cols-2 gap-3">
+                      <div className="flex flex-col">
+                        <span className="text-sm text-gray-400 mb-1">Tipe Properti</span>
+                        <span className="text-sm font-semibold">Rumah</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm text-gray-400 mb-1">Luas Tanah</span>
+                        <span className="text-sm font-semibold">220 m2</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm text-gray-400 mb-1">Luas Bangunan</span>
+                        <span className="text-sm font-semibold">100 m2</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm text-gray-400 mb-1">Kamar Tidur</span>
+                        <span className="text-sm font-semibold">2</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm text-gray-400 mb-1">Kamar Mandi</span>
+                        <span className="text-sm font-semibold">1</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm text-gray-400 mb-1">Setifikat</span>
+                        <span className="text-sm font-semibold">IMB, SHM</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm text-gray-400 mb-1">Jumlah Lantai</span>
+                        <span className="text-sm font-semibold">1</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm text-gray-400 mb-1">Kondisi Properti</span>
+                        <span className="text-sm font-semibold">Baru</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm text-gray-400 mb-1">Daya Listrik</span>
+                        <span className="text-sm font-semibold">1200 watt</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm text-gray-400 mb-1">Hadap</span>
+                        <span className="text-sm font-semibold">Timur</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm text-gray-400 mb-1">Jumlah Garasi</span>
+                        <span className="text-sm font-semibold">1</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm text-gray-400 mb-1">Tahun Bangun</span>
+                        <span className="text-sm font-semibold">2022</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm text-gray-400 mb-1">Kamar Pembantu</span>
+                        <span className="text-sm font-semibold">1</span>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Alamat */}
+                  <div className="mt-4 p-4 border rounded-md">
+                    <span className="text-lg font-semibold">Alamat</span>
+                    <div className="flex items-start gap-2 my-4">
+                      <Image src={'/icons/pin_drop.svg'} width={24} height={24} alt="" priority />
+                      <div className="text-sm text-gray-500">
+                        Kaliurang St No.KM 9.5, Jaban, Sardonoharjo, Ngaglik, Sleman Regency, Special Region of Yogyakarta 55582
+                      </div>
+                    </div>
+                    <Image src={'/dump/maps.png'} width={534} height={164} className=" object-cover" alt="" priority />
                   </div>
                 </div>
               </div>
