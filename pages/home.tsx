@@ -12,7 +12,7 @@ function Home() {
     <PageLayout>
         <Header />
         <div className="w-full h-384px bg-white"></div>
-
+        {/* Info Guide */}
         <div className="flex flex-col px-4 sm:px-36 py-6 sm:py-18 gap-y-6 w-full min-h-552px bg-neutral-20">
           <h4 className="font-bold text-40 text-primary">Bagaimana Sistem Infolelang?</h4>
           <div className="flex flex-col sm:flex-row justify-between sm:items-center">
@@ -45,7 +45,7 @@ function Home() {
             <Image src={"/img/icon/arrow-right.svg"} alt="arrow-right" width={10} height={17} />
           </Link>
         </div>
-
+        {/* Quetion */}
         <div className="flex flex-col w-full gap-y-12 sm:gap-y-12 px-4 sm:px-36 py-6 sm:py-18 bg-white">
           <h4 className="text-primary font-bold text-40">Frequently Asked Question</h4>
           <div className="flex flex-col gap-y-4">
@@ -57,7 +57,7 @@ function Home() {
             <CollapseCard title={"Siapakah pihak penjual dalam penjualan dengan mekanisme lelang?"} />
           </div>
         </div>
-
+        {/* Testimoni */}
         <div className="flex flex-col w-full flex flex-col sm:h-644px bg-neutral-20 px-4 sm:px-36 py-6 sm:py-18 gap-y-6">
           <h4 className="text-primary font-bold text-40">Apa Kata Mereka tentang Infolelang?</h4>
           <div className="flex flex-col sm:flex-row justify-between sm:items-center">
