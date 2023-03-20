@@ -37,7 +37,8 @@ module.exports = {
         '40': '40px',
       },
       padding: {
-        '18': '68px'
+        '18': '68px',
+        '34': '142px'
       },
     },
     screens: {
