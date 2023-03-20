@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         "primary": "#00529D",
         "secondary": "#F37022",
+        "disabled": "#DEE3EC"
       }
     },
     screens: {
@@ -28,5 +29,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }

@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+button,
+input,
+select {
+  outline: none !important;
+}
+
+input:disabled {
+  background: #DEE3EC !important;
+  color: rgb(107, 114, 128, 1) !important;
+}
