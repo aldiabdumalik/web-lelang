@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div className='flex flex-col md:flex-row px-6 py-5 items-center gap-12 bg-white'>
+    <div className='flex flex-col md:flex-row px-6 py-5 items-center gap-12 bg-white border-b'>
       <Image
         className="object-cover"
         src='/infolelang.png'

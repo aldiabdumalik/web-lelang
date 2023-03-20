@@ -18,6 +18,15 @@ module.exports = {
       lg: "976px",
       xl: "1440px",
     },
+    container: {
+      padding: {
+        DEFAULT: '3rem',
+        sm: '1rem',
+        lg: '3rem',
+        xl: '3rem',
+        '2xl': '6rem',
+      },
+    },
   },
   plugins: [],
 }
