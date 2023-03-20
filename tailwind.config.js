@@ -21,7 +21,7 @@ module.exports = {
     },
     container: {
       padding: {
-        DEFAULT: '3rem',
+        DEFAULT: '1rem',
         sm: '1rem',
         lg: '3rem',
         xl: '3rem',
