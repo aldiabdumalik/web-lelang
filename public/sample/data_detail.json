@@ -1,0 +1,22 @@
+{
+  "title": "Rumah Minimalis Green Residence",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisi, purus dui purus turpis urna. Vel curabitur porttitor et vel praesent faucibus ut sodales. Ac adipiscing erat interdum sed commodo egestas.",
+  "images": [
+    "/dump/detail-1.png",
+    "/dump/detail-2.png",
+    "/dump/detail-3.png",
+    "/dump/detail-4.png"
+  ],
+  "price": 230000000,
+  "location": {
+    "label": "Sleman, Yogyakarta",
+    "latitude": 0,
+    "longitude": 0
+  },
+  "facility": {
+    "bedroom": 2,
+    "bathroom": 1,
+    "garage": 2,
+    "wide": [220, 100]
+  }
+}
