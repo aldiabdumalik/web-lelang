@@ -23,7 +23,7 @@ export default function Detail({response}) {
 
   return (
     <PageLayout>
-      <div className="container flex flex-col items-center">
+      <div className="container mx-auto flex flex-col items-center">
         <div className="w-full md:w-2/3 pt-7 pb-8">
           <div className="flex items-center justify-between gap-5 flex-col md:flex-row">
             <Link href={'/'} className="flex items-center gap-2">
