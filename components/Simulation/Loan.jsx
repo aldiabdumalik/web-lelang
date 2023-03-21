@@ -98,6 +98,7 @@ export default function Loan() {
           </div>
         </div>
       </div>
+      <div className="grid grido"></div>
     </div>
   )
 }
