@@ -32,6 +32,11 @@ input:disabled {
   transform: translateY(-50%);
 }
 
+.divider:before,
+.divider::after {
+  height: 1px;
+}
+
 @media only screen and (max-width: 768px) {
   .center-right {
     top: 25%;

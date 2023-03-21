@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ButtonAction from "@/components/ButtonAction";
 
 export default function Navbar() {
   return (
@@ -18,7 +19,10 @@ export default function Navbar() {
         <Link href={'/'} className="text-sm">Properti</Link>
         <Link href={'/'} className="text-sm">Otomotif</Link>
       </div>
-      <button className="text-sm py-2.5 px-4 border border-primary font-semibold text-primary rounded-md">Daftar / Login</button>
+      <ButtonAction
+        label={"Daftar / Login"}
+        style={"text-sm py-2.5 px-4 border border-primary font-semibold text-primary rounded-md cursor-pointer"}
+      />
     </div>
   )
 }

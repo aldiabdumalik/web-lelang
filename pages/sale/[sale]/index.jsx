@@ -11,7 +11,7 @@ import Information from "@/components/SaleDetailPage/Info/Information";
 import Address from "@/components/SaleDetailPage/Info/Address";
 import Schedule from "@/components/SaleDetailPage/Schedule";
 import Calculator from "@/components/SaleDetailPage/Calculator";
-import Purchase from "@/components/SaleDetailPage/Purchase";
+import ButtonAction from "@/components/ButtonAction";
 
 export default function Detail({response}) {
   const description = {
@@ -19,6 +19,10 @@ export default function Detail({response}) {
     location: response.location.label,
     facility: response.facility,
     description: response.description
+  }
+
+  function cbPurchase() {
+    alert('callback')
   }
 
   return (
@@ -86,7 +90,11 @@ export default function Detail({response}) {
             </div>
             {/* Right */}
             <div className="w-full md:w-6/12">
-              <Purchase />
+              <ButtonAction
+                label={"Ajukan Pembelian"}
+                style={"block text-center cursor-pointer bg-primary py-2.5 text-white font-semibold rounded-md"}
+                callback={cbPurchase}
+              />
               <Schedule />
               <Calculator />
             </div>
