@@ -25,12 +25,12 @@ export default function Detail({response}) {
     <PageLayout>
       <div className="container mx-auto flex flex-col items-center">
         <div className="w-full md:w-2/3 pt-7 pb-8">
-          <div className="flex items-center justify-between gap-5 flex-col md:flex-row">
+          <div className="flex justify-between gap-5 flex-col items-start md:flex-row md:items-center">
             <Link href={'/'} className="flex items-center gap-2">
               <Image src={'/icons/arrow_back.svg'} width={20} height={20} alt="" priority />
               <span className="text-sm font-semibold text-primary">Kembali Ke Pencarian</span>
             </Link>
-            <div className="flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-3">
               <span className="text-xs text-gray-400">Home</span>
               <Image src={'/icons/arrow_right.svg'} width={16} height={16} alt="" priority />
               <span className="text-xs text-gray-400">Yogyakarta</span>

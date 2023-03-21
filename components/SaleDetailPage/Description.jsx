@@ -6,7 +6,7 @@ export default function Description({data}) {
     <div className="mt-5">
       <div className="text-xl font-semibold">{data.title}</div>
       <span className="text-gray-400 text-sm">{data.location}</span>
-      <div className="mt-6 gap-7 grid grid-cols-1 md:grid-cols-3">
+      <div className="mt-6 gap-7 grid grid-cols-2 md:grid-cols-3">
         {Object.keys(data.facility).map((d, i) => {
           return (
             <React.Fragment key={d}>
