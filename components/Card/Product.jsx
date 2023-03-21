@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function Product({title, location, image}) {
   return (
-    <div className="border rounded-md p-6">
-      <div className="relative flex items-start gap-6">
-        <Image src={image} width={200} height={200} className="object-cover" alt="" priority />
+    <div className="border rounded-md p-4 sm:p-6">
+      <div className="relative flex flex-col sm:flex-row items-start gap-6">
+        <Image src={image} width={200} height={200} className="object-cover w-full sm:w-auto" alt="" priority />
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
             <div className="flex gap-2">

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function TestiCard({text, name, status}) {
   return (
-    <div className="flex flex-col p-6 bg-white rounded-xl w-full sm:w-364 sm:gap-y-6">
+    <div className="flex flex-col p-4 sm:p-6 bg-white rounded-xl w-full sm:w-364 gap-y-4 sm:gap-y-6">
         <Image src={"/img/icon/quote.svg"} alt={"quote"} width={26} height={19} />
         <div className="text-base font-medium text-start text-primary-text">{text}</div>
         <div className="flex items-center gap-x-4">
