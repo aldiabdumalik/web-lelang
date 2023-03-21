@@ -1,4 +1,8 @@
+import { useRouter } from "next/router";
+
 export default function Calculator() {
+  const rts = useRouter();
+
   const handlePeriod = data => {
     console.log(data)
   }
@@ -43,7 +47,12 @@ export default function Calculator() {
       <div className="text-xs text-gray-500 my-5">
         *Catatan: Perhitungan ini adalah hasil perkiraaan aplikasi KPR secara umum. Data perhitungan di atas dapat berbeda dengan perhitungan bank. Untuk perhitungan yang akurat, silahkan hubungi kantor cabang kami.
       </div>
-      <button className="w-full text-white font-semibold rounded-md bg-secondary py-2.5">Lihat Kalkulasi</button>
+      <button
+        className="w-full text-white font-semibold rounded-md bg-secondary py-2.5"
+        onClick={() => rts.push(`/sale/${rts.query.sale}/calculator`)}
+      >
+        Lihat Kalkulasi
+      </button>
     </div>
   )
 }
