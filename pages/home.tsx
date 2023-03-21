@@ -13,8 +13,29 @@ function Home() {
     <PageLayout>
       <Header />
       {/* Sale */}
-      <div className="w-full px-4 sm:px-36 bg-white my-24">
-        <h4 className="font-bold text-40 text-primary mb-8">Lelang Terbaru</h4>
+      <div className="flex flex-col px-4 sm:px-36 py-6 sm:py-24 gap-y-6 w-full">
+        <h4 className="font-bold text-40 text-primary">Lelang Terbaru</h4>
+        <div className="flex flex-col sm:flex-row gap-y-6 sm:gap-y-0 sm:items-center sm:justify-between">
+          <div className="flex items-center gap-x-4 sm:gap-x-16">
+            <div className="flex items-center gap-x-2">
+              <Image src={"/img/icon/filter-menu.svg"} alt="icon" width={0} height={0} className="w-6 h-6" />
+              <p className="text-xl font-medium text-primary-text">Properti</p>
+              <Image src={"/img/icon/filter-arrow-down.svg"} alt="icon" width={0} height={0} className="w-6 h-6" />
+            </div>
+            <div className="flex items-center gap-x-2">
+              <Image src={"/img/icon/filter-location.svg"} alt="icon" width={0} height={0} className="w-6 h-6" />
+              <p className="text-xl font-medium text-primary-text">Yogyakarta</p>
+              <Image src={"/img/icon/filter-arrow-down.svg"} alt="icon" width={0} height={0} className="w-6 h-6" />
+            </div>
+          </div>
+          <div className="flex items-center sm:gap-x-4 justify-between sm:justify-start">
+            <p className="underline text-secondary text-base font-medium">Lihat Lebih Banyak</p>
+            <div className="flex items-center gap-x-4">
+              <Image src={"/img/icon/arrow-left-square.svg"} alt="icon" width={0} height={0} className="w-7 sm:w-10 h-7 sm:h-10" />
+              <Image src={"/img/icon/arrow-right-square.svg"} alt="icon" width={0} height={0} className="w-7 sm:w-10 h-7 sm:h-10" />
+            </div>
+          </div>
+        </div>
         <div className="grid sm:grid-cols-2 gap-6">
           <Product
             title="Rumah Minimalis Green Residence 1"
