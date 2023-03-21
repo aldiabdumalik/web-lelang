@@ -11,13 +11,13 @@ function Header() {
                 </h1>
             </div>
             <div className="hidden sm:block flex flex-col bg-black h-36 px-3 pt-3.5 w-full rounded-lg backdrop-filter backdrop-blur-sm bg-opacity-50">
-                <div className="flex gap-x-4">
-                    <div className="font-semibold text-white py-1 px-2">Properti</div>
+                <div className="flex gap-x-4 c-tabs">
+                    <div className="font-semibold text-white py-1 px-2 active">Properti</div>
                     <div className="font-semibold text-white py-1 px-2">Otomotif</div>
                     <div className="font-semibold text-white py-1 px-2">Mesin</div>
                     <div className="font-semibold text-white py-1 px-2">Lainnya</div>
                 </div>
-                <hr/>
+                <hr className="border-black" />
                 <div className="flex mt-6">
                     <div className="flex property gap-x-4 w-full">
                         <div className="h-14 grow bg-white rounded-md flex items-center text-base">

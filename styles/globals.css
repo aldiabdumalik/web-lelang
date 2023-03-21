@@ -17,3 +17,9 @@ input:disabled {
   @apply p-0;
   @apply px-4;
 }
+.c-tabs div {
+  @apply cursor-pointer;
+}
+.c-tabs .active {
+  @apply border-b-2;
+}
