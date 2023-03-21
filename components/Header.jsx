@@ -20,21 +20,57 @@ function Header() {
                 </div> */}
                 <Tabbar />
 
-                <hr className="border-black" />
+                {/* <hr className="border-black" />
                 <div className="flex mt-6">
                     <div className="flex property gap-x-4 w-full">
-                        <div className="h-14 grow bg-white rounded-md flex items-center text-base">
-                          <input type="text" placeholder="Cari berdasarkan lokasi, area sekitar, atau nama asset" className="input bg-transparent w-full" />
+                        <div className="h-14 grow bg-white rounded-md flex items-center text-base relative">
+                          <input type="text" placeholder="Cari berdasarkan lokasi, area sekitar, atau nama asset" className="input bg-transparent w-full pl-10" />
+                          <Image src={"/img/icon/search-placeholder.svg"} width={0} height={0} className="w-6 h-6 absolute left-2" alt="arrow" />
                         </div>
                         <div className="h-14 flex-1 border rounded-md flex justify-center items-center text-base">
-                          <select className="select bg-transparent w-full max-w-xs text-white" defaultValue={"Lokasi"}>
-                              <option value={"Lokasi"}>Lokasi</option>
-                          </select>
+                          <div className="dropdown w-full relative">
+                            <input type="text" placeholder="Lokasi" className="input bg-transparent w-full text-white placeholder:text-white" readOnly />
+                            <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6 absolute top-15 inset-y-4 right-2" alt="arrow" />
+                            <ul tabIndex={0} className="dropdown-content p-2 w-full sm:p-5 shadow bg-base-100 top-12 rounded-xl flex flex-col gap-y-4">
+                              <li className="p-2 bg-white cursor-pointer text-sm font-normal">Semua</li>
+                              <li className="p-2 bg-white cursor-pointer text-sm font-normal">Bali</li>
+                              <li className="p-2 bg-white cursor-pointer text-sm font-normal">Jakarta</li>
+                              <li className="p-2 bg-white cursor-pointer text-sm font-normal">Jawa Barat</li>
+                            </ul>
+                          </div>
                         </div>
                         <div className="h-14 flex-1 border rounded-md flex justify-center items-center text-base">
-                          <select className="select bg-transparent w-full max-w-xs text-white" defaultValue={"Tipe"}>
-                              <option value={"Tipe"}>Tipe</option>
-                          </select>
+                          <div className="dropdown w-full relative">
+                            <input type="text" placeholder="Tipe" className="input bg-transparent w-full text-white placeholder:text-white" readOnly />
+                            <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6 absolute top-15 inset-y-4 right-2" alt="arrow" />
+                            <ul tabIndex={0} className="dropdown-content p-2 w-full sm:p-5 shadow bg-base-100 top-12 rounded-xl flex flex-col gap-y-4">
+                              <li className="p-2 bg-white cursor-pointer text-sm font-normal">Semua</li>
+                              <li className="p-2 bg-white cursor-pointer text-sm font-normal">Apartemen</li>
+                              <li className="p-2 bg-white cursor-pointer text-sm font-normal">Rumah</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="h-14 flex-1 border rounded-md flex justify-center items-center text-base">
+                          <div className="dropdown w-full relative">
+                            <input type="text" placeholder="Merk" className="input bg-transparent w-full text-white placeholder:text-white" readOnly />
+                            <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6 absolute top-15 inset-y-4 right-2" alt="arrow" />
+                            <ul tabIndex={0} className="dropdown-content p-2 w-full sm:p-5 shadow bg-base-100 top-12 rounded-xl flex flex-col gap-y-4">
+                              <li className="p-2 bg-white cursor-pointer text-sm font-normal">Semua</li>
+                              <li className="p-2 bg-white cursor-pointer text-sm font-normal">Apartemen</li>
+                              <li className="p-2 bg-white cursor-pointer text-sm font-normal">Rumah</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="h-14 flex-1 border rounded-md flex justify-center items-center text-base">
+                          <div className="dropdown w-full relative">
+                            <input type="text" placeholder="Seri" className="input bg-transparent w-full text-white placeholder:text-white" readOnly />
+                            <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6 absolute top-15 inset-y-4 right-2" alt="arrow" />
+                            <ul tabIndex={0} className="dropdown-content p-2 w-full sm:p-5 shadow bg-base-100 top-12 rounded-xl flex flex-col gap-y-4">
+                              <li className="p-2 bg-white cursor-pointer text-sm font-normal">Semua</li>
+                              <li className="p-2 bg-white cursor-pointer text-sm font-normal">Apartemen</li>
+                              <li className="p-2 bg-white cursor-pointer text-sm font-normal">Rumah</li>
+                            </ul>
+                          </div>
                         </div>
                         <div className="h-14 flex-1 border rounded-md flex justify-center items-center text-base">
                           <div className="dropdown w-full">
@@ -42,7 +78,7 @@ function Header() {
                               <label tabIndex={0} className="block w-full bg-transparent text-start text-white">Harga</label>
                               <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6" alt="arrow" />
                             </div>
-                            <div tabIndex={0} className="dropdown-content w-96 menu p-2 sm:p-5 shadow bg-base-100 top-14 right-0 rounded-xl">
+                            <div tabIndex={0} className="dropdown-content w-96 menu p-2 sm:p-5 shadow bg-base-100 top-12 right-0 rounded-xl">
                               <div className="flex flex-col gap-y-4">
                                 <input type="range" min="0" max="100" className="range h-1" />
                                 <div className="flex flex-col sm:flex-row gap-x-4 items-center">
@@ -62,7 +98,7 @@ function Header() {
                         </div>
                         <div className="h-14 flex-none px-8 bg-secondary rounded-md flex justify-center items-center text-white text-base">Cari</div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     </>
