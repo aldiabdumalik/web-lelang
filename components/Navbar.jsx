@@ -14,7 +14,7 @@ export default function Navbar() {
         priority={1}
       />
       <div className="flex flex-col flex-1 md:flex-row gap-6">
-        <Link href={'/'} className="text-sm">Jadwal Lelang</Link>
+        <Link href={'/schedule'} className="text-sm">Jadwal Lelang</Link>
         <Link href={'/'} className="text-sm">Prosedur</Link>
         <Link href={'/'} className="text-sm">Properti</Link>
         <Link href={'/'} className="text-sm">Otomotif</Link>
