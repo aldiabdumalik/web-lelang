@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 export default function Calculator() {
   const rts = useRouter();
 
-  const handlePeriod = data => {
+  const handlePeriod = (data: any) => {
     console.log(data)
   }
 

@@ -6,19 +6,19 @@ import Installment from "@/components/Simulation/Installment";
 export default function Calculator() {
   const [info, setInfo] = useState('rincian');
 
-  const handlePeriod = data => {
+  const handlePeriod = (data: any) => {
     console.log(data)
   }
 
-  const handleRate = data => {
+  const handleRate = (data: any) => {
     console.log(data)
   }
 
-  const handleSubsidy = data => {
+  const handleSubsidy = (data: any) => {
     console.log(data)
   }
 
-  const handleCredit = data => {
+  const handleCredit = (data: any) => {
     console.log(data)
   }
 

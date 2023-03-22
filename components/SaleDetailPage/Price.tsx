@@ -1,7 +1,11 @@
 import Image from "next/image";
 import { formatIDR } from "@/plugins/globalFunction";
 
-export default function Price({price}) {
+interface PriceProps {
+  price: any;
+}
+
+export default function Price({price}: PriceProps) {
   return (
     <div className="flex flex-col items-start md:flex-row md:items-center gap-2.5 relative">
       <div className="text-primary font-bold text-3xl">{formatIDR(price, 'Rp')}</div>

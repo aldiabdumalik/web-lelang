@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
-export default function Pagination({pageLength = 4}) {
+interface PaginationProps {
+  pageLength: number;
+}
+
+export default function Pagination({pageLength}: PaginationProps) {
   const rts = useRouter();
   const [active, setActive] = useState(0);
 
@@ -40,7 +44,7 @@ export default function Pagination({pageLength = 4}) {
     }
   }
 
-  const handleChangePage = pageNum => {
+  const handleChangePage = (pageNum: number) => {
     if (pageNum !== active) {
       setActive(pageNum);
       if (typeof hash !== "undefined") {

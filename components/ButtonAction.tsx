@@ -1,7 +1,13 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function ButtonAction({label, style, callback}) {
+interface ActionProps {
+  label: string;
+  style: string;
+  callback: Function;
+}
+
+export default function ButtonAction({label, style, callback}: ActionProps) {
   const [login, setLogin] = useState(false)
   const [open, setOpen] = useState(false)
 
