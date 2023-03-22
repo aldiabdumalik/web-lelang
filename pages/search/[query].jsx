@@ -1,5 +1,6 @@
 import PageLayout from "@/layouts/PageLayout";
 import Image from "next/image";
+import Pagination from "@/components/Pagination";
 
 export default function SearchQuery() {
   const handleSale = () => {}
@@ -144,6 +145,9 @@ export default function SearchQuery() {
               )
             })}
           </div>
+        </div>
+        <div className="mx-3 mt-1 md:mx-6 md:mt-11">
+          <Pagination />
         </div>
       </div>
     </PageLayout>
