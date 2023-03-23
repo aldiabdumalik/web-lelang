@@ -15,11 +15,14 @@ module.exports = {
         'primary-text': '#171A1C',
         'secondary-text': '#73808C',
         "neutral-20": "#F9FAFB",
+        "tertiary": "#98A2B3",
+        "bluesky": "#B7DFFE"
       },
       height: {
         '720px': '45rem',
         '384px': '384px',
         '451px': '451px',
+        '500px': '500px',
         '552px': '552px',
         '644px': '644px',
       },
@@ -29,7 +32,7 @@ module.exports = {
       },
       backgroundImage: {
         'banner': "url('../public/img/banner.png')",
-        'banner-mobile': "url('../public/img/banner-mobile.png')",
+        'ava': "url('../public/img/dump/ava.jpg')",
       },
       backgroundPosition: {
         'top-4': 'right 57% bottom 100%',
