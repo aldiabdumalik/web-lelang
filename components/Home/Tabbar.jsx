@@ -104,24 +104,43 @@ function Tabbar() {
                 </div>
               )}
               <div className="h-14 flex-1 border rounded-md flex justify-center items-center text-base">
-                <div className="dropdown w-full">
-                  <div className="flex items-center px-4">
-                    <label tabIndex={0} className="block w-full bg-transparent text-start text-white">Harga</label>
-                    <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6" alt="arrow" />
-                  </div>
-                  <div tabIndex={0} className="dropdown-content w-96 menu p-2 sm:p-5 shadow bg-base-100 top-12 right-0 rounded-xl">
+                <div className="dropdown w-full relative">
+                  <input type="text" placeholder="Lokasi" 
+                    className="input bg-transparent w-full text-white placeholder:text-white"
+                    value={location} readOnly />
+                  <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6 absolute top-15 inset-y-4 right-2" alt="arrow" />
+                  <div tabIndex={0} className="dropdown-content w-96 md:w-451px p-2 sm:p-5 shadow bg-base-100 top-12 right-0 rounded-xl">
                     <div className="flex flex-col gap-y-4">
                       <input type="range" min="0" max="100" className="range h-1" />
-                      <div className="flex flex-col sm:flex-row gap-x-4 items-center">
-                        <div className="border p-6 flex-1 rounded-md flex flex-col">
-                          Harga Min
-                          <span>Rp. 0</span>
+                      <div className="flex flex-col sm:flex-row gap-x-4 items-center justify-between">
+                      <label className="block relative">
+                        <div className="flex flex-col">
+                          <span className="absolute inset-y-0 left-0 items-center px-2 mb-4">
+                            <p className="text-gray-500 text-sm">Harga Min</p>
+                          </span> 
+                          <span className="absolute inset-y-0 left-0 items-center px-2 mt-8">
+                            <p className="font-semibold">Rp</p>
+                          </span>
                         </div>
-                        <div>-</div>
-                        <div className="border p-6 flex-1 rounded-md flex flex-col">
-                          Harga Min
-                          <span>Rp. 0</span>
+                        <input type="number" className="border border-solid border-gray-300 w-36 rounded-md lg:pl-8 lg:pb-2 lg:pt-8 xs:pl-10 sm:text-sm lg:pr-2 font-semibold" />
+                      </label>
+                      <label>-</label>
+                      <label className="block relative">
+                        <div className="flex flex-col">
+                          <span className="absolute inset-y-0 left-0 items-center px-2 mb-4">
+                            <p className="text-gray-500 text-sm">Harga Max</p>
+                          </span> 
+                          <span className="absolute inset-y-0 left-0 items-center px-2 mt-8">
+                            <p className="font-semibold">Rp</p>
+                          </span>
                         </div>
+                        <input type="number" className="border border-solid border-gray-300 w-36 rounded-md lg:pl-8 lg:pb-2 lg:pt-8 xs:pl-10 sm:text-sm lg:pr-2 font-semibold" />
+                      </label>
+                      </div>
+                      <hr />
+                      <div className="flex justify-between items-center">
+                        <p className="underline cursor-pointer text-sm font-medium text-tertiary">Reset</p>
+                        <button type="button" className="btn bg-primary">Simpan</button>
                       </div>
                     </div>
                   </div>
