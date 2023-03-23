@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function GuideCard({ icon, number, title, desc }) {
   return (
-    <div className="flex flex-col w-full sm:w-271 bg-white p-6 rounded-xl">
+    <div className="flex flex-col w-full md:h-72 sm:w-271 bg-white p-6 rounded-xl">
         <div className="flex justify-between">
             <Image width={64} height={64} alt="icon-guide" src={icon} />
             <div className="text-xl font-semibold text-primary-30">{number}</div>
