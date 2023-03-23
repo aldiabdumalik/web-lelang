@@ -7,7 +7,6 @@ import { useRouter } from 'next/router'
 export default function Navbar() {
   const router = useRouter()
   const [open, setOpen] = useState(false);
-  console.log(router)
   return (
     <div className='bg-white fixed top-0 z-50 sm:z-auto w-full sm:relative'>
       <div className="flex flex-row justify-between px-4 sm:px-6 py-2 sm:py-5 items-center gap-8 lg:gap-12 border-b shadow-sm">
