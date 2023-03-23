@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Image from "next/image";
+import ReactSlider from 'react-slider'
 const types = ['Properti', 'Otomotif', 'Mesin', 'Lainnya'];
 
 function Tabbar() {
@@ -29,6 +30,9 @@ function Tabbar() {
       elem?.blur();
     }
   };
+  const handleSlider = value => {
+    console.log(value)
+  }
 
   return (
     <>
@@ -111,7 +115,22 @@ function Tabbar() {
                   <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6 absolute top-15 inset-y-4 right-2" alt="arrow" />
                   <div tabIndex={0} className="dropdown-content w-96 md:w-451px p-2 sm:p-5 shadow bg-base-100 top-12 right-0 rounded-xl">
                     <div className="flex flex-col gap-y-4">
-                      <input type="range" min="0" max="100" className="range h-1" />
+                      <ReactSlider
+                          className="horizontal-slider"
+                          thumbClassName="h-8 w-8 rounded-full bg-white flex items-center justify-center cursor-pointer top-2"
+                          trackClassName="example-track"
+                          defaultValue={[0, 10000]}
+                          ariaLabel={['Lower thumb', 'Upper thumb']}
+                          // ariaValuetext={state => `Thumb value ${state.valueNow}`}
+                          renderThumb={(props, state) => <div {...props}>
+                            <Image src={"/img/icon/slider-thumb.svg"} width={0} height={0} alt="icon" className="h-8 w-8" />
+                          </div>}
+                          pearling
+                          minDistance={10}
+                          min={0}
+                          max={10000}
+                          onChange={handleSlider}
+                      />
                       <div className="flex flex-col sm:flex-row gap-x-4 items-center justify-between">
                       <label className="block relative">
                         <div className="flex flex-col">
