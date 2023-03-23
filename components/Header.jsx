@@ -5,7 +5,7 @@ import { Tabbar, TabbarMobile } from "@/components/Home/"
 function Header() {
   return (
     <>
-        <div className="flex flex-1 justify-center items-end bg-top-4 px-20 pb-4 h-451px sm:h-720px bg-banner bg-no-repeat bg-cover sm:bg-center relative">
+        <div className="flex flex-1 justify-center items-end bg-top-4 px-20 pb-4 h-500px sm:h-720px bg-banner bg-no-repeat bg-cover sm:bg-center relative">
             <div className="absolute top-10 sm:px-96 sm:top-32">
                 <h1 className="text-2xl text-center sm:text-6xl font-bold text-white">
                 Temukan Rumah dan Kendaraan Impianmu

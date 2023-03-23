@@ -1,7 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Product({title, location, image}) {
   return (
+    <Link href={'/sale/1'}>
+
     <div className="border rounded-md p-4 sm:p-6">
       <div className="relative flex flex-col sm:flex-row items-start gap-6">
         <Image src={image} width={200} height={200} className="object-cover w-full sm:w-auto" alt="" priority />
@@ -36,5 +39,7 @@ export default function Product({title, location, image}) {
         </div>
       </div>
     </div>
+
+    </Link>
   )
 }

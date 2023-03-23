@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Image from "next/image";
 import ReactSlider from 'react-slider'
+import Link from 'next/link';
 const types = ['Properti', 'Otomotif', 'Mesin', 'Lainnya'];
 
 function Tabbar() {
@@ -191,7 +192,7 @@ function Tabbar() {
                   </div>
                 </div>
               </div>
-              <div className="h-14 flex-none px-8 bg-secondary rounded-md flex justify-center items-center text-white text-base">Cari</div>
+              <Link href={'/search/1'} className="h-14 flex-none px-8 bg-secondary rounded-md flex justify-center items-center text-white text-base">Cari</Link>
           </div>
       </div>
     </>

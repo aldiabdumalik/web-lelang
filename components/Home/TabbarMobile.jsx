@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { ArrowDropdown } from "@/components/icon/"
 import Image from "next/image";
 import ReactSlider from 'react-slider'
+import Link from 'next/link';
 const types = ['Properti', 'Otomotif', 'Mesin', 'Lainnya'];
 
 function TabbarMobile() {
@@ -210,6 +211,9 @@ function TabbarMobile() {
               </div>
             </div>
           </div>
+
+          <Link href={'/search/1'} className="h-11 w-full flex-none px-8 bg-secondary rounded-md flex justify-center items-center text-white text-base">Cari</Link>
+
         </div>
       </div>
     </div>
