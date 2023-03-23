@@ -19,8 +19,8 @@ function DropdownIcon({icon, text, flag}) {
     <div className="dropdown px-2">
         <div tabIndex={0} className="flex items-center gap-x-2 cursor-pointer">
             <Image src={icon} alt="icon" width={0} height={0} className="w-6 h-6" />
-            <p className="text-xl font-medium text-primary-text">{active}</p>
-            <Image src={"/img/icon/filter-arrow-down.svg"} alt="icon" width={0} height={0} className="w-6 h-6" />
+            <p className="text-sm sm:text-xl font-medium text-primary-text">{active}</p>
+            <Image src={"/img/icon/filter-arrow-down.svg"} alt="icon" width={0} height={0} className="w-4 h-4 sm:w-6 sm:h-6" />
         </div>
         <ul tabIndex={0} className="dropdown-content p-2 w-full sm:p-5 shadow bg-base-100 top-8 rounded-xl flex flex-col gap-y-4">
             {
