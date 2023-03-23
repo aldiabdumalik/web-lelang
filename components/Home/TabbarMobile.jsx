@@ -138,7 +138,7 @@ function TabbarMobile() {
             </div>
           )}
 
-          <div className="h-11 w-28 border rounded-md flex justify-center items-center text-base">
+          <div className={"h-11 border rounded-md flex justify-center items-center text-base " + (active === 'Properti' || active === 'Mesin' ? "w-full" : "w-28")}>
             <div className="dropdown w-full relative">
               <input type="text" placeholder="Harga" 
                 className="input h-10 bg-white w-full text-primary placeholder:text-primary cursor-pointer"
