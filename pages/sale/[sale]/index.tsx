@@ -1,3 +1,4 @@
+import { useState } from "react";
 import PageLayout from "@/layouts/PageLayout";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,8 +13,15 @@ import Address from "@/components/SaleDetailPage/Info/Address";
 import Schedule from "@/components/SaleDetailPage/Schedule";
 import Calculator from "@/components/SaleDetailPage/Calculator";
 import ButtonAction from "@/components/ButtonAction";
+import PurchaseType from "@/components/Purchase/PurchaseType";
 
-export default function Detail({response}) {
+interface DetailProps {
+  response: any;
+}
+
+export default function Detail({response}: DetailProps) {
+  const [openPurchase, setOpenPurchase] = useState(false);
+
   const description = {
     title: response.title,
     location: response.location.label,
@@ -22,7 +30,7 @@ export default function Detail({response}) {
   }
 
   function cbPurchase() {
-    alert('callback')
+    setOpenPurchase(true);
   }
 
   return (
@@ -101,6 +109,7 @@ export default function Detail({response}) {
           </div>
         </div>
       </div>
+      {openPurchase && <PurchaseType toggle={openPurchase} onClose={(_: boolean) => setOpenPurchase(_)} />}
     </PageLayout>
   )
 }

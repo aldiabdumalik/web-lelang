@@ -4,7 +4,7 @@ import RegistForm from "@/components/Form/RegistForm"
 interface ActionProps {
   label: string;
   style: string;
-  callback: Function;
+  callback: Function | any;
 }
 
 export default function ButtonAction({label, style, callback}: ActionProps) {
