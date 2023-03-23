@@ -5,7 +5,7 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@babel/runtime@npm:^7.20.7":
+"@babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0":
   version: 7.21.0
   resolution: "@babel/runtime@npm:7.21.0"
   dependencies:
@@ -2024,6 +2024,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "infolelangv2-fe@workspace:."
   dependencies:
+    "@babel/runtime": ^7.21.0
     "@types/node": 18.15.3
     "@types/react": 18.0.28
     "@types/react-dom": 18.0.11
@@ -2035,6 +2036,7 @@ __metadata:
     postcss: ^8.4.21
     react: 18.2.0
     react-dom: 18.2.0
+    react-slider: ^2.0.4
     tailwindcss: ^3.2.7
     typescript: 5.0.2
   languageName: unknown
@@ -3171,6 +3173,17 @@ __metadata:
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
+  languageName: node
+  linkType: hard
+
+"react-slider@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "react-slider@npm:2.0.4"
+  dependencies:
+    prop-types: ^15.8.1
+  peerDependencies:
+    react: ^16 || ^17 || ^18
+  checksum: d7a70eba03017d2e35dc54430afefb1dad8ad2a1f3c39fbbdfdd4d48d41aea9fddf9ff006207a2ad2cf1f1b76295efddba3d23b2af2b8a3d0d1b2aa44390bbf7
   languageName: node
   linkType: hard
 
