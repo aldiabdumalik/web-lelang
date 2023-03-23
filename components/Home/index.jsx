@@ -1,2 +1,3 @@
 import Tabbar from "./Tabbar";
-export { Tabbar }
+import TabbarMobile from "./TabbarMobile";
+export { TabbarMobile, Tabbar }

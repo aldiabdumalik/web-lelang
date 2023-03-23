@@ -201,3 +201,13 @@ input:disabled {
     right: 10px;
   }
 }
+
+.btn-group .active {
+  @apply bg-primary;
+  @apply text-white;
+}
+
+.btn-group .rnd-none {
+  @apply rounded-t-lg !important;
+  @apply rounded-b-none !important;
+}
