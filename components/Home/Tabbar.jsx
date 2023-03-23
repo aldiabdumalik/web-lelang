@@ -10,6 +10,9 @@ function Tabbar() {
   const [merk, setMerk] = useState('');
   const [seri, setSeri] = useState('');
   const [price, setPrice] = useState('');
+  const [minValue, setMinValue] = useState(0);
+  const [maxValue, setMaxValue] = useState(10000);
+  const [range, setRange] = useState([0, 10000]);
 
   const handleClick = event => {
     const elem = document.activeElement;
@@ -31,7 +34,17 @@ function Tabbar() {
     }
   };
   const handleSlider = value => {
-    console.log(value)
+    // console.log(value)
+    // setRange(value)
+    setMinValue(value[0])
+    setMaxValue(value[1])
+  }
+  const handleSavePrice = e => {
+    const elem = document.activeElement;
+    setPrice(`${minValue} - ${maxValue}`);
+    if(elem){
+      elem?.blur();
+    }
   }
 
   return (
@@ -126,10 +139,11 @@ function Tabbar() {
                             <Image src={"/img/icon/slider-thumb.svg"} width={0} height={0} alt="icon" className="h-8 w-8" />
                           </div>}
                           pearling
-                          minDistance={10}
+                          minDistance={1000}
                           min={0}
                           max={10000}
                           onChange={handleSlider}
+                          value={[minValue, maxValue]}
                       />
                       <div className="flex flex-col sm:flex-row gap-x-4 items-center justify-between">
                       <label className="block relative">
@@ -141,7 +155,13 @@ function Tabbar() {
                             <p className="font-semibold">Rp</p>
                           </span>
                         </div>
-                        <input type="number" className="border border-solid border-gray-300 w-36 rounded-md lg:pl-8 lg:pb-2 lg:pt-8 xs:pl-10 sm:text-sm lg:pr-2 font-semibold" />
+                        <input type="number" 
+                        className="border border-solid border-gray-300 w-36 rounded-md lg:pl-8 lg:pb-2 lg:pt-8 xs:pl-10 sm:text-sm lg:pr-2 font-semibold"
+                        // defaultValue={range[0]}
+                        min={0}
+                        max={maxValue}
+                        value={minValue}
+                        onChange={(e) => setMinValue(e.target.value)} />
                       </label>
                       <label>-</label>
                       <label className="block relative">
@@ -153,13 +173,19 @@ function Tabbar() {
                             <p className="font-semibold">Rp</p>
                           </span>
                         </div>
-                        <input type="number" className="border border-solid border-gray-300 w-36 rounded-md lg:pl-8 lg:pb-2 lg:pt-8 xs:pl-10 sm:text-sm lg:pr-2 font-semibold" />
+                        <input type="number" 
+                        className="border border-solid border-gray-300 w-36 rounded-md lg:pl-8 lg:pb-2 lg:pt-8 xs:pl-10 sm:text-sm lg:pr-2 font-semibold"
+                        // defaultValue={range[1]}
+                        min={minValue}
+                        max={10000}
+                        value={maxValue}
+                        onChange={(e) => setMaxValue(e.target.value)} />
                       </label>
                       </div>
                       <hr />
                       <div className="flex justify-between items-center">
-                        <p className="underline cursor-pointer text-sm font-medium text-tertiary">Reset</p>
-                        <button type="button" className="btn bg-primary">Simpan</button>
+                        <p className="underline cursor-pointer text-sm font-medium text-tertiary" onClick={() => {setMinValue(0); setMaxValue(10000) }}>Reset</p>
+                        <button type="button" className="btn bg-primary" onClick={handleSavePrice}>Simpan</button>
                       </div>
                     </div>
                   </div>

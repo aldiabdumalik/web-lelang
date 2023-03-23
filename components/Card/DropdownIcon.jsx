@@ -17,7 +17,7 @@ function DropdownIcon({icon, text, flag}) {
   }
   return (
     <div className="dropdown px-2">
-        <div tabIndex={0} className="flex items-center gap-x-2">
+        <div tabIndex={0} className="flex items-center gap-x-2 cursor-pointer">
             <Image src={icon} alt="icon" width={0} height={0} className="w-6 h-6" />
             <p className="text-xl font-medium text-primary-text">{active}</p>
             <Image src={"/img/icon/filter-arrow-down.svg"} alt="icon" width={0} height={0} className="w-6 h-6" />
