@@ -19,16 +19,6 @@ function Home() {
           <div className="flex items-center gap-x-4 sm:gap-x-16">
             <DropdownIcon icon={"/img/icon/filter-menu.svg"} text={"Properti"} flag={"types"} />
             <DropdownIcon icon={"/img/icon/filter-location.svg"} text={"Semua"} flag={"locations"} />
-            {/* <div className="flex items-center gap-x-2">
-              <Image src={"/img/icon/filter-menu.svg"} alt="icon" width={0} height={0} className="w-6 h-6" />
-              <p className="text-xl font-medium text-primary-text">Properti</p>
-              <Image src={"/img/icon/filter-arrow-down.svg"} alt="icon" width={0} height={0} className="w-6 h-6" />
-            </div>
-            <div className="flex items-center gap-x-2">
-              <Image src={"/img/icon/filter-location.svg"} alt="icon" width={0} height={0} className="w-6 h-6" />
-              <p className="text-xl font-medium text-primary-text">Yogyakarta</p>
-              <Image src={"/img/icon/filter-arrow-down.svg"} alt="icon" width={0} height={0} className="w-6 h-6" />
-            </div> */}
           </div>
           <div className="flex items-center sm:gap-x-4 justify-between sm:justify-start">
             <p className="underline text-secondary text-base font-medium">Lihat Lebih Banyak</p>
@@ -130,10 +120,16 @@ function Home() {
             name={"Citra"}
             status={"Midfielder"} />
         </div>
-        <Link href={"/"} className="flex justify-center sm:hidden gap-x-2 sm:gap-x-4 items-center">
-          <p className="text-lg font-normal text-secondary">Lihat Selengkapnya </p>
-          <Image src={"/img/icon/arrow-right.svg"} alt="arrow-right" width={10} height={17} />
-        </Link>
+        <div className="flex w-full justify-between items-center gap-x-2">
+          <div className="relative w-full">
+            <div className="border-2 w-full" ></div>
+            <hr className="border-2 border-secondary w-1/2 absolute top-0" />
+          </div>
+          <div className="flex items-center sm:gap-x-4">
+            <Image src={"/img/icon/arrow-left-square.svg"} alt="icon" width={0} height={0} className="w-7 sm:w-10 h-7 sm:h-10" />
+            <Image src={"/img/icon/arrow-right-square.svg"} alt="icon" width={0} height={0} className="w-7 sm:w-10 h-7 sm:h-10" />
+          </div>
+        </div>
       </div>
     </PageLayout>
   )

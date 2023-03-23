@@ -31,7 +31,7 @@ module.exports = {
       },
       backgroundImage: {
         'banner': "url('../public/img/banner.png')",
-        'banner-mobile': "url('../public/img/banner-mobile.png')",
+        'ava': "url('../public/img/dump/ava.jpg')",
       },
       backgroundPosition: {
         'top-4': 'right 57% bottom 100%',
