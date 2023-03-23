@@ -63,7 +63,7 @@ export default function Loan() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 mb-5">
         <div className="border-b h-9">
           <span className="text-primary font-semibold">Biaya Notaris</span>
         </div>
@@ -98,7 +98,16 @@ export default function Loan() {
           </div>
         </div>
       </div>
-      <div className="grid grido"></div>
+      <div className="flex flex-col border-t gap-2 mb-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-4">
+          <span className="text text-gray-400 font-bold text-primary">Angsuran Per Bulan</span>
+          <span className="text text-gray-400 font-bold text-primary">Rp4.372.800</span>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <span className="text text-gray-400 font-bold text-primary">Pembayaran Pertama</span>
+          <span className="text text-gray-400 font-bold text-primary">Rp237.316.700</span>
+        </div>
+      </div>
     </div>
   )
 }

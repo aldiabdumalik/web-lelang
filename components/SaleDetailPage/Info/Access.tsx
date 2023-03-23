@@ -4,7 +4,7 @@ export default function Access() {
   return (
     <div className="mt-4 p-4 border rounded-md">
       <span className="text-lg font-semibold">Akses</span>
-      <div className="mt-5 grid grid-cols-2 gap-3">
+      <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
         <div className="flex items-center">
           <div className="flex items-center gap-2 w-full md:w-1/2">
             <Image src={'/icons/first_aid.svg'} width={20} height={20} alt="" priority />

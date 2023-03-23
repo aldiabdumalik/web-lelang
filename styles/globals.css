@@ -104,9 +104,11 @@ input:disabled {
   @apply p-0;
   @apply px-4;
 }
+
 .c-tabs div {
   @apply cursor-pointer;
 }
+
 .c-tabs .active {
   @apply border-b-2;
 }
@@ -180,4 +182,22 @@ input:disabled {
 .vertical-slider .example-mark {
   margin: calc(25px - 6px) 0;
   left: calc(50% - 6px);
+}
+
+.center-right {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.divider:before,
+.divider::after {
+  height: 1px;
+}
+
+@media only screen and (max-width: 768px) {
+  .center-right {
+    top: 25%;
+    right: 10px;
+  }
 }
