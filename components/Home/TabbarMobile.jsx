@@ -49,7 +49,7 @@ function TabbarMobile() {
   }
 
   return (
-    <div className="sm:hidden">
+    <div className="lg:hidden">
       <div className="btn-group">
         {
           types.map(type => (

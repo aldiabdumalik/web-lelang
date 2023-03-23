@@ -7,7 +7,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <div className='bg-white fixed top-0 z-50 sm:z-auto w-full sm:relative'>
-      <div className="flex flex-row justify-between px-4 sm:px-6 py-2 sm:py-5 items-center gap-12 border-b">
+      <div className="flex flex-row justify-between px-4 sm:px-6 py-2 sm:py-5 items-center gap-8 lg:gap-12 border-b shadow-sm">
         <button type="button" className={"block sm:hidden cursor-pointer"} onClick={()=>setOpen(!open)}>
           <Image
               className="w-8 h-8"
