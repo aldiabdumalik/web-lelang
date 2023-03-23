@@ -34,8 +34,29 @@ export default function ItemOtomotif({id, title}: ItemProps) {
         <h3 className="text-lg font-semibold leading-5">{title}</h3>
         <span className="text-sm text-gray-400 leading-6">Jakarta Utara, DKI Jakarta</span>
         <h2 className="text-xl font-bold text-primary mt-4">Rp1.200.000.000</h2>
-        <div className="text-sm mt-5"></div>
-        <div className="absolute top-0 right-10 cursor-pointer">
+        <div className="mt-5 flex flex-col gap-y-2">
+            <div className="flex items-center">
+                <div className="flex items-center gap-x-2 flex-1">
+                    <Image src={'/img/icon/search-clock.svg'} width={20} height={20} alt="" priority />
+                    <span className="text-sm">2019</span>
+                </div>
+                <div className="flex items-center gap-x-2 flex-1">
+                    <Image src={'/img/icon/search-clock.svg'} width={20} height={20} alt="" priority />
+                    <span className="text-sm">AT</span>
+                </div>
+            </div>
+            <div className="flex items-center">
+                <div className="flex items-center gap-x-2 flex-1">
+                    <Image src={'/img/icon/search-bensin.svg'} width={20} height={20} alt="" priority />
+                    <span className="text-sm">Bensin</span>
+                </div>
+                <div className="flex items-center gap-x-2 flex-1">
+                    <Image src={'/img/icon/search-speed.svg'} width={20} height={20} alt="" priority />
+                    <span className="text-sm">50000 KM</span>
+                </div>
+            </div>
+        </div>
+        <div className="absolute top-0 right-0 lg:right-10 cursor-pointer">
           <Image src={'/icons/love_orange.svg'} width={28} height={28} alt="" priority />
         </div>
       </div>
