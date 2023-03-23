@@ -13,7 +13,7 @@ function Home() {
     <PageLayout>
       <Header />
       {/* Sale */}
-      <div className="flex flex-col px-4 sm:px-36 py-6 sm:py-24 gap-y-6 w-full">
+      <div className="flex flex-col px-4 lg:px-36 py-6 sm:py-24 gap-y-6 w-full">
         <h4 className="font-bold text-2xl sm:text-40 text-primary">Lelang Terbaru</h4>
         <div className="flex flex-col sm:flex-row gap-y-6 sm:gap-y-0 sm:items-center sm:justify-between">
           <div className="flex items-center gap-x-4 sm:gap-x-16">
@@ -52,16 +52,16 @@ function Home() {
         </div>
       </div>
       {/* Info Guide */}
-      <div className="flex flex-col px-4 sm:px-36 py-6 sm:py-18 gap-y-6 w-full min-h-552px bg-neutral-20">
+      <div className="flex flex-col px-4 lg:px-36 py-6 sm:py-18 gap-y-6 w-full min-h-552px bg-neutral-20">
         <h4 className="font-bold text-2xl sm:text-40 text-primary">Bagaimana Sistem Infolelang?</h4>
         <div className="flex flex-col sm:flex-row justify-between sm:items-center">
           <p className="text-lg font-normal text-primary-text ">Berikut adalah panduan singkat bagaimana kamu bisa mendapatkan properti atau kendaraan impianmu</p>
           <Link href={"/"} className="hidden sm:flex sm:gap-x-4 items-center">
-            <p className="text-lg font-normal text-secondary">Lihat Selengkapnya </p>
+            <p className="text-sm lg:text-lg font-normal text-secondary">Lihat Selengkapnya </p>
             <Image src={"/img/icon/arrow-right.svg"} alt="arrow-right" width={10} height={17} />
           </Link>
         </div>
-        <div className="flex flex-col sm:flex-row gap-y-4 sm:gap-y-0 sm:gap-x-6 items-center w-full mt-6">
+        <div className="flex flex-col sm:flex-row gap-y-4 sm:gap-y-0 md:gap-x-4 lg:gap-x-6 items-center w-full mt-6">
           <GuideCard 
             icon={"/img/icon/search-square.svg"} 
             number={"01"} title={"Cari Aset"} 
@@ -85,7 +85,7 @@ function Home() {
         </Link>
       </div>
       {/* Quetion */}
-      <div className="flex flex-col w-full gap-y-12 sm:gap-y-12 px-4 sm:px-36 py-6 sm:py-18 bg-white">
+      <div className="flex flex-col w-full gap-y-12 sm:gap-y-12 px-4 lg:px-36 py-6 sm:py-18 bg-white">
         <h4 className="text-primary font-bold text-2xl sm:text-40">Frequently Asked Question</h4>
         <div className="flex flex-col gap-y-4">
           <CollapseCard title={"Informasi apa sajakah yang disajikan dalam website info lelang BRI ini?"} />
@@ -97,7 +97,7 @@ function Home() {
         </div>
       </div>
       {/* Testimoni */}
-      <div className="flex flex-col w-full flex flex-col sm:h-644px bg-neutral-20 px-4 sm:px-36 py-6 sm:py-18 gap-y-6">
+      <div className="flex flex-col w-full flex flex-col sm:h-644px bg-neutral-20 px-4 lg:px-36 py-6 sm:py-18 gap-y-6">
         <h4 className="text-primary font-bold text-2xl sm:text-40">Apa Kata Mereka tentang Infolelang?</h4>
         <div className="flex flex-col sm:flex-row justify-between sm:items-center">
           <p className="text-sm sm:text-lg font-normal text-primary-text">Testimoni mereka yang telah menggunakan infolelang</p>
@@ -106,7 +106,7 @@ function Home() {
             <Image src={"/img/icon/arrow-right.svg"} alt="arrow-right" width={10} height={17} />
           </Link>
         </div>
-        <div className="flex flex-col sm:flex-row gap-y-4 sm:gap-y-0 sm:gap-x-6">
+        <div className="flex flex-col sm:flex-row gap-y-4 sm:gap-y-0 lg:gap-x-6">
           <TestiCard
             text={"Saya sangat senang mengikuti lelang di infolelang BRI, lorem ipsum sir dolor lorem ipsum sir Overall barangnya sangat memuaskan!"}
             name={"Sofia"}

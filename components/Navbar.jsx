@@ -2,12 +2,15 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ButtonAction from "@/components/ButtonAction";
+import { useRouter } from 'next/router'
 
 export default function Navbar() {
+  const router = useRouter()
   const [open, setOpen] = useState(false);
+  console.log(router)
   return (
     <div className='bg-white fixed top-0 z-50 sm:z-auto w-full sm:relative'>
-      <div className="flex flex-row justify-between px-4 sm:px-6 py-2 sm:py-5 items-center gap-12 border-b">
+      <div className="flex flex-row justify-between px-4 sm:px-6 py-2 sm:py-5 items-center gap-8 lg:gap-12 border-b shadow-sm">
         <button type="button" className={"block sm:hidden cursor-pointer"} onClick={()=>setOpen(!open)}>
           <Image
               className="w-8 h-8"
@@ -17,7 +20,7 @@ export default function Navbar() {
               alt="infolelang logo"
             />
         </button>
-        <div className="hidden sm:block">
+        <Link href={'/home'} className="hidden sm:block">
           <Image
             className="object-cover"
             src='/infolelang.png'
@@ -26,12 +29,12 @@ export default function Navbar() {
             alt="infolelang logo"
             priority={1}
           />
-        </div>
-        <div className="hidden sm:inline-flex flex flex-col flex-1 md:flex-row gap-6">
-          <Link href={'/schedule'} className="text-sm">Jadwal Lelang</Link>
-          <Link href={'/'} className="text-sm">Prosedur</Link>
-          <Link href={'/'} className="text-sm">Properti</Link>
-          <Link href={'/'} className="text-sm">Otomotif</Link>
+        </Link>
+        <div className="hidden sm:inline-flex flex flex-col flex-1 md:flex-row gap-6 nav-link">
+          <Link href={'/schedule'} className={"text-sm py-3 px-2 " + (router.pathname === '/schedule' ? 'active' : '')}>Jadwal Lelang</Link>
+          <Link href={'/procedure'} className={"text-sm py-3 px-2 " + (router.pathname === '/procedure' ? 'active' : '')}>Prosedur</Link>
+          <Link href={'/search/properti'} className={"text-sm py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'properti' ? 'active' : '')}>Properti</Link>
+          <Link href={'/search/otomotif'} className={"text-sm py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'otomotif' ? 'active' : '')}>Otomotif</Link>
         </div>
         <ButtonAction
           label={"Daftar / Login"}
@@ -39,13 +42,9 @@ export default function Navbar() {
           callback={() => console.log('cb')}
         />
       </div>
-      <div className={open ? 'block ' : 'hidden'}>
-        <div className="flex flex-col gap-y-8 items-start p-8 w-full">
-            <Link href={'/schedule'} className="text-sm">Jadwal Lelang</Link>
-            <Link href={'/'} className="text-sm">Prosedur</Link>
-            <Link href={'/'} className="text-sm">Properti</Link>
-            <Link href={'/'} className="text-sm">Otomotif</Link>
-            <div className="flex w-full items-center justify-center">
+      <div className={open ? 'block shadown-sm ' : 'hidden'}>
+        <div className="flex flex-col gap-y-4 items-start p-6 w-full nav-link">
+            <Link href={'/home'} className="flex w-full items-center justify-center">
               <Image
                 className="object-cover"
                 src='/infolelang.png'
@@ -54,7 +53,11 @@ export default function Navbar() {
                 alt="infolelang logo"
                 priority={1}
               />
-            </div>
+            </Link>
+            <Link href={'/schedule'} className={"text-sm w-full py-3 px-2 " + (router.pathname === '/schedule' ? 'active' : '')}>Jadwal Lelang</Link>
+            <Link href={'/procedure'} className={"text-sm w-full py-3 px-2 " + (router.pathname === '/procedure' ? 'active' : '')}>Prosedur</Link>
+            <Link href={'/search/properti'} className={"text-sm w-full py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'properti' ? 'active' : '')}>Properti</Link>
+            <Link href={'/search/otomotif'} className={"text-sm w-full py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'otomotif' ? 'active' : '')}>Otomotif</Link>
           </div>
       </div>
     </div>

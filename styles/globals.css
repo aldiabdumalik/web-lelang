@@ -221,3 +221,7 @@ input:disabled {
   @apply rounded-t-lg !important;
   @apply rounded-b-none !important;
 }
+
+.nav-link .active {
+  @apply outline outline-2 rounded-md outline-primary text-primary font-semibold;
+}

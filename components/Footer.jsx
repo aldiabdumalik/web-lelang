@@ -5,7 +5,7 @@ import Link from "next/link";
 function Footer() {
   return (
     <>
-        <div className="flex flex-col bottom-0 p-8 gap-y-6 sm:gap-y-0 sm:px-34 sm:py-12 sm:gap-x-4 sm:flex-row w-full bg-primary">
+        <div className="flex flex-col bottom-0 p-8 gap-y-6 sm:gap-y-0 lg:px-34 sm:py-12 sm:gap-x-4 sm:flex-row w-full bg-primary">
             <div className="flex flex-col flex-1">
             <h4 className="text-2xl font-semibold text-white">Kantor Pusat</h4>
             <div className="flex flex-col mt-8">
