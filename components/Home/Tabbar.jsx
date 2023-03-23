@@ -50,7 +50,7 @@ function Tabbar() {
               <div className="h-14 flex-1 border rounded-md flex justify-center items-center text-base">
                 <div className="dropdown w-full relative">
                   <input type="text" placeholder="Lokasi" 
-                    className="input bg-transparent w-full text-white placeholder:text-white"
+                    className="input bg-transparent w-full text-white placeholder:text-white cursor-pointer"
                     value={location} readOnly />
                   <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6 absolute top-15 inset-y-4 right-2" alt="arrow" />
                   <ul tabIndex={0} className="dropdown-content p-2 w-full sm:p-5 shadow bg-base-100 top-12 rounded-xl flex flex-col gap-y-4">
@@ -64,7 +64,7 @@ function Tabbar() {
               { (active === 'Properti') && (
                 <div className="h-14 flex-1 border rounded-md flex justify-center items-center text-base">
                   <div className="dropdown w-full relative">
-                    <input type="text" placeholder="Tipe" className="input bg-transparent w-full text-white placeholder:text-white" value={tipe} readOnly />
+                    <input type="text" placeholder="Tipe" className="input bg-transparent w-full text-white placeholder:text-white cursor-pointer" value={tipe} readOnly />
                     <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6 absolute top-15 inset-y-4 right-2" alt="arrow" />
                     <ul tabIndex={0} className="dropdown-content p-2 w-full sm:p-5 shadow bg-base-100 top-12 rounded-xl flex flex-col gap-y-4">
                       <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="tipe" value="Semua" onClick={handleClick}>Semua</li>
@@ -77,7 +77,7 @@ function Tabbar() {
               { (active === 'Otomotif' || active === 'Mesin') && (
                 <div className="h-14 flex-1 border rounded-md flex justify-center items-center text-base">
                   <div className="dropdown w-full relative">
-                    <input type="text" placeholder="Merk" className="input bg-transparent w-full text-white placeholder:text-white" value={merk} readOnly />
+                    <input type="text" placeholder="Merk" className="input bg-transparent w-full text-white placeholder:text-white cursor-pointer" value={merk} readOnly />
                     <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6 absolute top-15 inset-y-4 right-2" alt="arrow" />
                     <ul tabIndex={0} className="dropdown-content p-2 w-full sm:p-5 shadow bg-base-100 top-12 rounded-xl flex flex-col gap-y-4">
                       <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="merk" value="Semua" onClick={handleClick}>Semua</li>
@@ -92,7 +92,7 @@ function Tabbar() {
               { (active === 'Otomotif') && (
                 <div className="h-14 flex-1 border rounded-md flex justify-center items-center text-base">
                   <div className="dropdown w-full relative">
-                    <input type="text" placeholder="Seri" className="input bg-transparent w-full text-white placeholder:text-white" value={seri} readOnly />
+                    <input type="text" placeholder="Seri" className="input bg-transparent w-full text-white placeholder:text-white cursor-pointer" value={seri} readOnly />
                     <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6 absolute top-15 inset-y-4 right-2" alt="arrow" />
                     <ul tabIndex={0} className="dropdown-content p-2 w-full sm:p-5 shadow bg-base-100 top-12 rounded-xl flex flex-col gap-y-4">
                       <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="seri" value="Semua" onClick={handleClick}>Semua</li>
@@ -105,9 +105,9 @@ function Tabbar() {
               )}
               <div className="h-14 flex-1 border rounded-md flex justify-center items-center text-base">
                 <div className="dropdown w-full relative">
-                  <input type="text" placeholder="Lokasi" 
-                    className="input bg-transparent w-full text-white placeholder:text-white"
-                    value={location} readOnly />
+                  <input type="text" placeholder="Harga" 
+                    className="input bg-transparent w-full text-white placeholder:text-white cursor-pointer"
+                    value={price} readOnly />
                   <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6 absolute top-15 inset-y-4 right-2" alt="arrow" />
                   <div tabIndex={0} className="dropdown-content w-96 md:w-451px p-2 sm:p-5 shadow bg-base-100 top-12 right-0 rounded-xl">
                     <div className="flex flex-col gap-y-4">
