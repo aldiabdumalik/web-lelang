@@ -7,13 +7,25 @@ interface PurchaseTypeProps {
 }
 
 export default function PurchaseType({toggle, onClose}: PurchaseTypeProps) {
-  const [open, setOpen] = useState(toggle)
+  const [open, setOpen] = useState(toggle);
+  const [cash, setCash] = useState(false);
+  const [kpr, setKpr] = useState(false);
 
   const toggleHandler = () => {}
 
   const closeHandler = () => {
-    onClose(false)
+    onClose(false);
     setOpen(false);
+  }
+
+  const handleCash = () => {
+    setCash(true);
+    setKpr(false);
+  }
+
+  const handleKpr = () => {
+    setKpr(true);
+    setCash(false);
   }
 
   return (
@@ -30,44 +42,34 @@ export default function PurchaseType({toggle, onClose}: PurchaseTypeProps) {
               ✕
             </label>
           </div>
-          <div className="container mx-auto pt-6 pb-7">
-            <div className="flex flex-col gap-2">
-              <span className="text-sm font-semibold">Email</span>
-              <input type="text" className="w-full py-2.5 border rounded-md px-3.5" placeholder="your@mail.com" />
-            </div>
-            <div className="flex flex-col gap-2 mt-4">
-              <span className="text-sm font-semibold">Password</span>
-              <input type="password" className="w-full py-2.5 border rounded-md px-3.5" placeholder="Password" />
-            </div>
-            <div className="flex items-center justify-between mt-4">
-              <div className="form-control">
-                <label className="label p-0 cursor-pointer flex items-center gap-2">
-                  <input type="checkbox" className="checkbox checkbox-sm" />
-                  <span className="label-text text-sm">Ingat Saya</span> 
-                </label>
+          <div className="px-6 pt-6 pb-7">
+            <div className="flex grid grid-cols-2 gap-6 mb-5">
+              <div className="border rounded-md p-4 cursor-pointer" onClick={handleCash}>
+                <div className="flex flex-col items-center gap-4">
+                  <div className="flex items-center flex-col w-full">
+                    <div className="w-full text-right">
+                      <input type="radio" className="radio radio-primary" checked={cash} onChange={() => cash} />
+                    </div>
+                    <div className="w-32 h-32 rounded-full bg-blue-100"></div>
+                  </div>
+                  <h1 className="text-xl font-semibold text-center leading-6">Pengajuan Pembelian Cash</h1>
+                </div>
               </div>
-              <span className="text-sm text-secondary cursor-pointer">Lupa Kata Sandi?</span>
+              <div className="border rounded-md p-4 cursor-pointer" onClick={handleKpr}>
+                <div className="flex flex-col items-center gap-4">
+                  <div className="flex items-center flex-col w-full">
+                    <div className="w-full text-right">
+                      <input type="radio" className="radio radio-primary" checked={kpr} onChange={() => kpr} />
+                    </div>
+                    <div className="w-32 h-32 rounded-full bg-blue-100"></div>
+                  </div>
+                  <h1 className="text-xl font-semibold text-center leading-6">Pengajuan Pembelian KPR</h1>
+                </div>
+              </div>
             </div>
-            <div className="mt-7">
-              <button className="w-full bg-primary font-semibold text-white rounded-md py-3">Masuk</button>
-            </div>
-            <div className="divider">
-              <span className="text-sm">atau masuk dengan</span>
-            </div>
-            <div className="flex gap-4">
-              <button className="flex items-center justify-center rounded-md gap-4 py-3 bg-gray-200 w-full">
-                <Image src={'/icons/facebook.svg'} width={24} height={24} alt="" priority />
-                <span>Facebook</span>
-              </button>
-              <button className="flex items-center justify-center rounded-md gap-4 py-3 bg-gray-200 w-full">
-                <Image src={'/icons/google.svg'} width={24} height={24} alt="" priority />
-                <span>Google</span>
-              </button>
-            </div>
-            <div className="text-sm text-center mt-6">
-              Belum punya akun?
-              <span className="ml-1 cursor-pointer font-semibold text-secondary">Daftar</span>
-            </div>
+            <button className="w-full rounded-md bg-primary py-3">
+              <span className="text-white font-semibold">Lanjutkan dan Bayar</span>
+            </button>
           </div>
         </div>
       </div>

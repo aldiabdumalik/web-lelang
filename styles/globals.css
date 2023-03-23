@@ -37,6 +37,16 @@ input:disabled {
   height: 1px;
 }
 
+.radio-primary,
+.radio-primary:hover,
+.radio-primary:checked {
+  border-color: #00529D;
+}
+
+.radio-primary:checked {
+  background-color: #00529D;
+}
+
 @media only screen and (max-width: 768px) {
   .center-right {
     top: 25%;
