@@ -22,6 +22,7 @@ export default function Navbar() {
       <ButtonAction
         label={"Daftar / Login"}
         style={"text-sm py-2.5 px-4 border border-primary font-semibold text-primary rounded-md cursor-pointer"}
+        callback={() => console.log('cb')}
       />
     </div>
   )

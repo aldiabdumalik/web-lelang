@@ -8,7 +8,7 @@ interface ActionProps {
 }
 
 export default function ButtonAction({label, style, callback}: ActionProps) {
-  const [login, setLogin] = useState(false)
+  const [login, setLogin] = useState(true)
   const [open, setOpen] = useState(false)
 
   const mustLogin = () => {
