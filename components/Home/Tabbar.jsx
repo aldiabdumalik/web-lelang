@@ -4,6 +4,32 @@ const types = ['Properti', 'Otomotif', 'Mesin', 'Lainnya'];
 
 function Tabbar() {
   const [active, setActive] = useState(types[0]);
+  const [location, setLocation] = useState('');
+  const [tipe, setTipe] = useState('');
+  const [merk, setMerk] = useState('');
+  const [seri, setSeri] = useState('');
+  const [price, setPrice] = useState('');
+
+  const handleClick = event => {
+    const elem = document.activeElement;
+    const flag = event.target.attributes.flag.value
+    const value = event.target.attributes.value.value
+    if (flag == 'location') {
+      setLocation(value)
+    }else if (flag == 'tipe') {
+      setTipe(value)
+    }else if (flag == 'merk') {
+      setMerk(value)
+    }else if (flag == 'seri') {
+      setSeri(value)
+    }
+
+    // hideDropdown
+    if(elem){
+      elem?.blur();
+    }
+  };
+
   return (
     <>
       <div className="flex gap-x-4 c-tabs">
@@ -17,30 +43,33 @@ function Tabbar() {
       <div className="flex mt-6">
           <div className="flex property gap-x-4 w-full">
               <div className="h-14 grow bg-white rounded-md flex items-center text-base relative">
-                <input type="text" placeholder="Cari berdasarkan lokasi, area sekitar, atau nama asset" className="input bg-transparent w-full pl-10" />
+                <input type="text" placeholder="Cari berdasarkan lokasi, area sekitar, atau nama asset"
+                  className="input bg-transparent w-full pl-10" />
                 <Image src={"/img/icon/search-placeholder.svg"} width={0} height={0} className="w-6 h-6 absolute left-2" alt="arrow" />
               </div>
               <div className="h-14 flex-1 border rounded-md flex justify-center items-center text-base">
                 <div className="dropdown w-full relative">
-                  <input type="text" placeholder="Lokasi" className="input bg-transparent w-full text-white placeholder:text-white" readOnly />
+                  <input type="text" placeholder="Lokasi" 
+                    className="input bg-transparent w-full text-white placeholder:text-white"
+                    value={location} readOnly />
                   <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6 absolute top-15 inset-y-4 right-2" alt="arrow" />
                   <ul tabIndex={0} className="dropdown-content p-2 w-full sm:p-5 shadow bg-base-100 top-12 rounded-xl flex flex-col gap-y-4">
-                    <li className="p-2 bg-white cursor-pointer text-sm font-normal">Semua</li>
-                    <li className="p-2 bg-white cursor-pointer text-sm font-normal">Bali</li>
-                    <li className="p-2 bg-white cursor-pointer text-sm font-normal">Jakarta</li>
-                    <li className="p-2 bg-white cursor-pointer text-sm font-normal">Jawa Barat</li>
+                    <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="location" value="Semua" onClick={handleClick}>Semua</li>
+                    <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="location" value="Bali" onClick={handleClick}>Bali</li>
+                    <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="location" value="Jakarta" onClick={handleClick}>Jakarta</li>
+                    <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="location" value="Jawa Barat" onClick={handleClick}>Jawa Barat</li>
                   </ul>
                 </div>
               </div>
               { (active === 'Properti') && (
                 <div className="h-14 flex-1 border rounded-md flex justify-center items-center text-base">
                   <div className="dropdown w-full relative">
-                    <input type="text" placeholder="Tipe" className="input bg-transparent w-full text-white placeholder:text-white" readOnly />
+                    <input type="text" placeholder="Tipe" className="input bg-transparent w-full text-white placeholder:text-white" value={tipe} readOnly />
                     <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6 absolute top-15 inset-y-4 right-2" alt="arrow" />
                     <ul tabIndex={0} className="dropdown-content p-2 w-full sm:p-5 shadow bg-base-100 top-12 rounded-xl flex flex-col gap-y-4">
-                      <li className="p-2 bg-white cursor-pointer text-sm font-normal">Semua</li>
-                      <li className="p-2 bg-white cursor-pointer text-sm font-normal">Apartemen</li>
-                      <li className="p-2 bg-white cursor-pointer text-sm font-normal">Rumah</li>
+                      <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="tipe" value="Semua" onClick={handleClick}>Semua</li>
+                      <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="tipe" value="Apartemen" onClick={handleClick}>Apartemen</li>
+                      <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="tipe" value="Rumah" onClick={handleClick}>Rumah</li>
                     </ul>
                   </div>
                 </div>
@@ -48,14 +77,14 @@ function Tabbar() {
               { (active === 'Otomotif' || active === 'Mesin') && (
                 <div className="h-14 flex-1 border rounded-md flex justify-center items-center text-base">
                   <div className="dropdown w-full relative">
-                    <input type="text" placeholder="Merk" className="input bg-transparent w-full text-white placeholder:text-white" readOnly />
+                    <input type="text" placeholder="Merk" className="input bg-transparent w-full text-white placeholder:text-white" value={merk} readOnly />
                     <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6 absolute top-15 inset-y-4 right-2" alt="arrow" />
                     <ul tabIndex={0} className="dropdown-content p-2 w-full sm:p-5 shadow bg-base-100 top-12 rounded-xl flex flex-col gap-y-4">
-                      <li className="p-2 bg-white cursor-pointer text-sm font-normal">Semua</li>
-                      <li className="p-2 bg-white cursor-pointer text-sm font-normal">Audi</li>
-                      <li className="p-2 bg-white cursor-pointer text-sm font-normal">BMW</li>
-                      <li className="p-2 bg-white cursor-pointer text-sm font-normal">Ford</li>
-                      <li className="p-2 bg-white cursor-pointer text-sm font-normal">Honda</li>
+                      <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="merk" value="Semua" onClick={handleClick}>Semua</li>
+                      <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="merk" value="Audi" onClick={handleClick}>Audi</li>
+                      <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="merk" value="BMW" onClick={handleClick}>BMW</li>
+                      <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="merk" value="Ford" onClick={handleClick}>Ford</li>
+                      <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="merk" value="Honda" onClick={handleClick}>Honda</li>
                     </ul>
                   </div>
                 </div>
@@ -63,13 +92,13 @@ function Tabbar() {
               { (active === 'Otomotif') && (
                 <div className="h-14 flex-1 border rounded-md flex justify-center items-center text-base">
                   <div className="dropdown w-full relative">
-                    <input type="text" placeholder="Seri" className="input bg-transparent w-full text-white placeholder:text-white" readOnly />
+                    <input type="text" placeholder="Seri" className="input bg-transparent w-full text-white placeholder:text-white" value={seri} readOnly />
                     <Image src={"/img/icon/arrow-dropdown.svg"} width={0} height={0} className="w-6 h-6 absolute top-15 inset-y-4 right-2" alt="arrow" />
                     <ul tabIndex={0} className="dropdown-content p-2 w-full sm:p-5 shadow bg-base-100 top-12 rounded-xl flex flex-col gap-y-4">
-                      <li className="p-2 bg-white cursor-pointer text-sm font-normal">Semua</li>
-                      <li className="p-2 bg-white cursor-pointer text-sm font-normal">APV</li>
-                      <li className="p-2 bg-white cursor-pointer text-sm font-normal">Balino</li>
-                      <li className="p-2 bg-white cursor-pointer text-sm font-normal">Ertiga</li>
+                      <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="seri" value="Semua" onClick={handleClick}>Semua</li>
+                      <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="seri" value="APV" onClick={handleClick}>APV</li>
+                      <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="seri" value="Balino" onClick={handleClick}>Balino</li>
+                      <li className="p-2 bg-white cursor-pointer text-sm font-normal" flag="seri" value="Ertiga" onClick={handleClick}>Ertiga</li>
                     </ul>
                   </div>
                 </div>

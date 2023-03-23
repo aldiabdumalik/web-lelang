@@ -2,7 +2,7 @@ import PageLayout from '@/layouts/PageLayout';
 import Header from '@/components/Header'
 // import GuideCard from '@/components/Card/GuideCard'
 // import CollapseCard from '@/components/Card/CollapseCard'
-import { GuideCard, CollapseCard, TestiCard } from '@/components/Card/'
+import { GuideCard, CollapseCard, TestiCard, DropdownIcon } from '@/components/Card/'
 import Image from "next/image";
 import Link from "next/link";
 import React from 'react'
@@ -17,7 +17,9 @@ function Home() {
         <h4 className="font-bold text-40 text-primary">Lelang Terbaru</h4>
         <div className="flex flex-col sm:flex-row gap-y-6 sm:gap-y-0 sm:items-center sm:justify-between">
           <div className="flex items-center gap-x-4 sm:gap-x-16">
-            <div className="flex items-center gap-x-2">
+            <DropdownIcon icon={"/img/icon/filter-menu.svg"} text={"Properti"} flag={"types"} />
+            <DropdownIcon icon={"/img/icon/filter-location.svg"} text={"Semua"} flag={"locations"} />
+            {/* <div className="flex items-center gap-x-2">
               <Image src={"/img/icon/filter-menu.svg"} alt="icon" width={0} height={0} className="w-6 h-6" />
               <p className="text-xl font-medium text-primary-text">Properti</p>
               <Image src={"/img/icon/filter-arrow-down.svg"} alt="icon" width={0} height={0} className="w-6 h-6" />
@@ -26,7 +28,7 @@ function Home() {
               <Image src={"/img/icon/filter-location.svg"} alt="icon" width={0} height={0} className="w-6 h-6" />
               <p className="text-xl font-medium text-primary-text">Yogyakarta</p>
               <Image src={"/img/icon/filter-arrow-down.svg"} alt="icon" width={0} height={0} className="w-6 h-6" />
-            </div>
+            </div> */}
           </div>
           <div className="flex items-center sm:gap-x-4 justify-between sm:justify-start">
             <p className="underline text-secondary text-base font-medium">Lihat Lebih Banyak</p>
