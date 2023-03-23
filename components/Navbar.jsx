@@ -39,12 +39,8 @@ export default function Navbar() {
           callback={() => console.log('cb')}
         />
       </div>
-      <div className={open ? 'block ' : 'hidden'}>
+      <div className={open ? 'block shadown-sm ' : 'hidden'}>
         <div className="flex flex-col gap-y-8 items-start p-8 w-full">
-            <Link href={'/schedule'} className="text-sm">Jadwal Lelang</Link>
-            <Link href={'/'} className="text-sm">Prosedur</Link>
-            <Link href={'/'} className="text-sm">Properti</Link>
-            <Link href={'/'} className="text-sm">Otomotif</Link>
             <div className="flex w-full items-center justify-center">
               <Image
                 className="object-cover"
@@ -55,6 +51,10 @@ export default function Navbar() {
                 priority={1}
               />
             </div>
+            <Link href={'/schedule'} className="text-sm">Jadwal Lelang</Link>
+            <Link href={'/'} className="text-sm">Prosedur</Link>
+            <Link href={'/'} className="text-sm">Properti</Link>
+            <Link href={'/'} className="text-sm">Otomotif</Link>
           </div>
       </div>
     </div>
