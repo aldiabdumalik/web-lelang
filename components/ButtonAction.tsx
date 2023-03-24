@@ -4,6 +4,8 @@ import RegistForm from "@/components/Form/RegistForm"
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { auth } from '@/store/auth';
 import { toast } from 'react-toastify';
+import { setLocalState } from "@/utils/localStorage";
+
 interface ActionProps {
   label: string;
   style: string;
@@ -11,7 +13,6 @@ interface ActionProps {
 }
 
 export default function ButtonAction({label, style, callback}: ActionProps) {
-  const [login, setLogin] = useState(false)
   const [open, setOpen] = useState(false)
   const [form, setForm] = useState('login')
   const { isAuth, user } = useRecoilValue(auth);
@@ -21,9 +22,8 @@ export default function ButtonAction({label, style, callback}: ActionProps) {
     password: '',
   });
 
-
   const mustLogin = () => {
-    if (login) return callback()
+    if (isAuth) return callback()
     return setOpen(true)
   }
 
@@ -32,16 +32,23 @@ export default function ButtonAction({label, style, callback}: ActionProps) {
   const LoginSubmit = () => {
     setUsers({
       isAuth: true,
-      user: {
+      user: JSON.parse(JSON.stringify({
         id: 1,
         username: 'johnwick3',
         phone: '+62 82150002133',
         fullname: 'John Wick',
         email: 'johnwick3@gmail.com',
         level: 'penjual',
-      }
+      }))
     });
-    setLogin(true);
+    setLocalState('_auth', {
+      id: 1,
+      username: 'johnwick3',
+      phone: '+62 82150002133',
+      fullname: 'John Wick',
+      email: 'johnwick3@gmail.com',
+      level: 'penjual',
+    });
   }
 
   const handleOnchange = (text:any, input:any) => {

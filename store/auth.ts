@@ -1,27 +1,33 @@
-import { atom, selector } from 'recoil';
+import { atom, selector, useSetRecoilState } from 'recoil';
+import { getLocalState } from '@/utils/localStorage';
+import { useEffect } from 'react';
 
-const auth = atom({
-  key: 'auth-user-' + new Date(),
+export const auth = atom({
+  key: "Auth",
   default: {
     isAuth: false,
-    user: {
-      id: 1,
-      username: 'johnwick3',
-      phone: '+62 82150002133',
-      fullname: 'John Wick',
-      email: 'johnwick3@gmail.com',
-      level: 'penjual',
-    },
+    user: null,
   },
 });
 
-const authState = selector({
-  key: 'auth-state-' + new Date(),
+export const authState = selector({
+  key: "AuthState",
   get: ({get}) => {
     const user = get(auth);
     return user;
   }
 });
 
-export {auth, authState};
-  
+export function initAuth() {
+  const cok = getLocalState('_auth');
+  if (cok) {
+    const setUserAuth = useSetRecoilState(auth);
+
+    useEffect(() => {
+      setUserAuth({
+        isAuth: true,
+        user: JSON.parse(JSON.stringify(cok))
+      });
+    }, []);
+  }
+}

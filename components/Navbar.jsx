@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ButtonAction from "@/components/ButtonAction";
 import { useRouter } from 'next/router'
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { auth } from '@/store/auth';
 
 
@@ -11,7 +11,7 @@ export default function Navbar() {
   const router = useRouter()
   const [open, setOpen] = useState(false);
   // const [isLogin, setIsLogin] = useState(true);
-  const { isAuth, user } = useRecoilValue(auth);
+  const {isAuth, user} = useRecoilValue(auth);
 
   return (
     <div className='bg-white fixed top-0 z-50 sm:z-auto w-full sm:relative'>
