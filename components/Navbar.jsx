@@ -36,12 +36,12 @@ export default function Navbar() {
           />
         </Link>
         <div className="hidden sm:inline-flex flex flex-col flex-1 md:flex-row sm:items-center gap-x-2 lg:gap-x-6 nav-link">
-          <Link href={'/schedule'} className={"text-sm sm:text-xs py-3 px-2 " + (router.pathname === '/schedule' ? 'active' : '')}>Jadwal Lelang</Link>
-          <Link href={'/procedure'} className={"text-sm sm:text-xs py-3 px-2 " + (router.pathname === '/procedure' ? 'active' : '')}>Prosedur</Link>
-          <Link href={'/search/properti'} className={"text-sm sm:text-xs py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'properti' ? 'active' : '')}>Properti</Link>
-          <Link href={'/search/otomotif'} className={"text-sm sm:text-xs py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'otomotif' ? 'active' : '')}>Otomotif</Link>
+          <Link href={'/schedule'} className={"lg:text-sm text-xs py-3 px-2 " + (router.pathname === '/schedule' ? 'active' : '')}>Jadwal Lelang</Link>
+          <Link href={'/procedure'} className={"lg:text-sm text-xs py-3 px-2 " + (router.pathname === '/procedure' ? 'active' : '')}>Prosedur</Link>
+          <Link href={'/search/properti'} className={"lg:text-sm text-xs py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'properti' ? 'active' : '')}>Properti</Link>
+          <Link href={'/search/otomotif'} className={"lg:text-sm text-xs py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'otomotif' ? 'active' : '')}>Otomotif</Link>
           {isAuth && (
-            <Link href={'/jual-asset'} className={"text-sm sm:text-xs py-3 px-2 " + (router.pathname === '/jual-asset' ? 'active' : '')}>Jual Asset</Link>
+            <Link href={'/jual-asset'} className={"lg:text-sm text-xs py-3 px-2 " + (router.pathname === '/jual-asset' ? 'active' : '')}>Jual Asset</Link>
           )}
         </div>
         {!isAuth && <ButtonAction
