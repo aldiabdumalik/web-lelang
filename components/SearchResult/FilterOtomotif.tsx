@@ -11,7 +11,7 @@ export default function Otomotif() {
   return (
     <div className="flex items-center gap-4 flex-col md:flex-row">
       {/* Search */}
-      <div className="flex items-center border py-2.5 px-3.5 rounded-md">
+      <div className="flex items-center border py-2.5 px-3.5 rounded-md w-full md:w-auto">
         <select className="" onChange={handleSale}>
           <option value="buy">Beli</option>
           <option value="sell">Jual</option>

@@ -3,7 +3,7 @@ import { atom, selector } from 'recoil';
 const auth = atom({
     key: 'auth-user-' + new Date().toString(),
     default: {
-      isAuth: true,
+      isAuth: false,
       user: {
         id: 1,
         username: 'johnwick3',
