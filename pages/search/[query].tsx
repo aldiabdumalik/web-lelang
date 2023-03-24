@@ -26,7 +26,7 @@ export default function SearchQuery() {
             </div>
           )}
           {router.query.query == 'otomotif' && (
-            <div className="grid grid-cols-1 md:grid-cols-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
               {[...Array(12)].fill(undefined).map((_, i) => <ItemOtomotif key={i} title={'Honda Brio 1.2 Satya E'} />)}  
             </div>
           )}
