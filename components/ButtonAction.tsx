@@ -3,6 +3,7 @@ import Image from "next/image";
 import RegistForm from "@/components/Form/RegistForm"
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { auth } from '@/components/store/auth';
+import { toast } from 'react-toastify';
 interface ActionProps {
   label: string;
   style: string;
@@ -14,11 +15,39 @@ export default function ButtonAction({label, style, callback}: ActionProps) {
   const [open, setOpen] = useState(false)
   const [form, setForm] = useState('login')
   const { isAuth, user } = useRecoilValue(auth);
+  const [users, setUsers] = useRecoilState(auth);
+  const [inputs, setInputs] = useState({
+    email: '',
+    password: '',
+  });
+
 
   const mustLogin = () => {
     if (login) return callback()
     return setOpen(true)
   }
+
+  const notify = () => toast("Wow so easy !");
+
+  const LoginSubmit = () => {
+    setUsers({
+      isAuth: true,
+      user: {
+        id: 1,
+        username: 'johnwick3',
+        phone: '+62 82150002133',
+        fullname: 'John Wick',
+        email: 'johnwick3@gmail.com',
+        level: 'penjual',
+      }
+    });
+
+  }
+
+  const handleOnchange = (text:any, input:any) => {
+    setInputs((prevState) => ({ ...prevState, [input]: text }));
+  };
+
 
   const toggleHandler = () => {}
   const elementHandler = () => {
@@ -64,7 +93,7 @@ export default function ButtonAction({label, style, callback}: ActionProps) {
                   <span className="text-sm text-secondary cursor-pointer">Lupa Kata Sandi?</span>
                 </div>
                 <div className="mt-7">
-                  <button className="w-full bg-primary font-semibold text-white rounded-md py-3">Masuk</button>
+                  <button className="w-full bg-primary font-semibold text-white rounded-md py-3" onClick={LoginSubmit}>Masuk</button>
                 </div>
                 <div className="divider">
                   <span className="text-sm">atau masuk dengan</span>
