@@ -35,11 +35,14 @@ export default function Navbar() {
             priority={1}
           />
         </Link>
-        <div className="hidden sm:inline-flex flex flex-col flex-1 md:flex-row gap-6 nav-link">
-          <Link href={'/schedule'} className={"text-sm py-3 px-2 " + (router.pathname === '/schedule' ? 'active' : '')}>Jadwal Lelang</Link>
-          <Link href={'/procedure'} className={"text-sm py-3 px-2 " + (router.pathname === '/procedure' ? 'active' : '')}>Prosedur</Link>
-          <Link href={'/search/properti'} className={"text-sm py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'properti' ? 'active' : '')}>Properti</Link>
-          <Link href={'/search/otomotif'} className={"text-sm py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'otomotif' ? 'active' : '')}>Otomotif</Link>
+        <div className="hidden sm:inline-flex flex flex-col flex-1 md:flex-row sm:items-center gap-x-2 lg:gap-x-6 nav-link">
+          <Link href={'/schedule'} className={"text-sm sm:text-xs py-3 px-2 " + (router.pathname === '/schedule' ? 'active' : '')}>Jadwal Lelang</Link>
+          <Link href={'/procedure'} className={"text-sm sm:text-xs py-3 px-2 " + (router.pathname === '/procedure' ? 'active' : '')}>Prosedur</Link>
+          <Link href={'/search/properti'} className={"text-sm sm:text-xs py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'properti' ? 'active' : '')}>Properti</Link>
+          <Link href={'/search/otomotif'} className={"text-sm sm:text-xs py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'otomotif' ? 'active' : '')}>Otomotif</Link>
+          {isAuth && (
+            <Link href={'/jual-asset'} className={"text-sm sm:text-xs py-3 px-2 " + (router.pathname === '/jual-asset' ? 'active' : '')}>Jual Asset</Link>
+          )}
         </div>
         {!isAuth && <ButtonAction
             label={"Daftar / Login"}
@@ -61,7 +64,7 @@ export default function Navbar() {
           </div>
         </div>}
       </div>
-      <div className={open ? 'block shadown-sm ' : 'hidden'}>
+      <div className={open ? 'block shadown-sm border-b ' : 'hidden'}>
         <div className="flex flex-col gap-y-4 items-start p-6 w-full nav-link">
           <Link href={'/home'} className="flex w-full items-center justify-center">
             <Image
@@ -77,6 +80,9 @@ export default function Navbar() {
           <Link href={'/procedure'} className={"text-sm w-full py-3 px-2 " + (router.pathname === '/procedure' ? 'active' : '')}>Prosedur</Link>
           <Link href={'/search/properti'} className={"text-sm w-full py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'properti' ? 'active' : '')}>Properti</Link>
           <Link href={'/search/otomotif'} className={"text-sm w-full py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'otomotif' ? 'active' : '')}>Otomotif</Link>
+          {isAuth && (
+            <Link href={'/jual-asset'} className={"text-sm w-full py-3 px-2 " + (router.pathname === '/jual-asset' ? 'active' : '')}>Jual Asset</Link>
+          )}
         </div>
       </div>
     </div>
