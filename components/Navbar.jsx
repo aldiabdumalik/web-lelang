@@ -3,11 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import ButtonAction from "@/components/ButtonAction";
 import { useRouter } from 'next/router'
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { auth } from '@/components/store/auth';
+
 
 export default function Navbar() {
   const router = useRouter()
   const [open, setOpen] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
+  // const [isLogin, setIsLogin] = useState(true);
+  const { isAuth, user } = useRecoilValue(auth);
 
   return (
     <div className='bg-white fixed top-0 z-50 sm:z-auto w-full sm:relative'>
@@ -37,13 +41,13 @@ export default function Navbar() {
           <Link href={'/search/properti'} className={"text-sm py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'properti' ? 'active' : '')}>Properti</Link>
           <Link href={'/search/otomotif'} className={"text-sm py-3 px-2 " + (router.pathname === '/search/[query]' && router.query.query == 'otomotif' ? 'active' : '')}>Otomotif</Link>
         </div>
-        {!isLogin && <ButtonAction
+        {!isAuth && <ButtonAction
             label={"Daftar / Login"}
             style={"text-sm py-2.5 px-4 border border-primary font-semibold text-primary rounded-md cursor-pointer"}
             callback={() => console.log('cb')}
           />
         }
-        {isLogin && <div className="flex items-center gap-5">
+        {isAuth && <div className="flex items-center gap-5">
           <div className="flex gap-3">
             <Image src={'/icons/bell.svg'} width={20} height={20} alt="" priority />
             <span className="text-sm">Chat</span>
@@ -53,7 +57,7 @@ export default function Navbar() {
             <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
               <span className="font-semibold text-white text-xs">JW</span>
             </div>
-            <span className="text-sm">John Wick</span>
+            <span className="text-sm">{user.fullname}</span>
           </div>
         </div>}
       </div>

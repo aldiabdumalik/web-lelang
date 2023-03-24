@@ -18,7 +18,7 @@ export default function PageLayout(pageProps: PageLayoutProps) {
         <title>Info Lelang BRI</title>
       </Head>
       <Navbar />
-      <div className="mt-14 sm:mt-0">
+      <div className="mt-11 sm:mt-0">
         {children}
       </div>
       <Footer />

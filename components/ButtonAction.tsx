@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import RegistForm from "@/components/Form/RegistForm"
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { auth } from '@/components/store/auth';
 interface ActionProps {
   label: string;
   style: string;
@@ -8,9 +10,10 @@ interface ActionProps {
 }
 
 export default function ButtonAction({label, style, callback}: ActionProps) {
-  const [login, setLogin] = useState(true)
+  const [login, setLogin] = useState(false)
   const [open, setOpen] = useState(false)
   const [form, setForm] = useState('login')
+  const { isAuth, user } = useRecoilValue(auth);
 
   const mustLogin = () => {
     if (login) return callback()
@@ -27,7 +30,7 @@ export default function ButtonAction({label, style, callback}: ActionProps) {
   return (
     <>
       <label onClick={mustLogin} className={style}>{label}</label>
-      {!login && <>
+      {!isAuth && <>
         <input type="checkbox" className="modal-toggle" checked={open} onChange={toggleHandler} />
         <div className="modal">
           <div className="modal-box p-0 py-2 rounded-lg relative">
