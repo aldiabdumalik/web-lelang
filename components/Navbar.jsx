@@ -4,7 +4,7 @@ import Link from "next/link";
 import ButtonAction from "@/components/ButtonAction";
 import { useRouter } from 'next/router'
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { auth } from '@/components/store/auth';
+import { auth } from '@/store/auth';
 
 
 export default function Navbar() {

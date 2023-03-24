@@ -2,7 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import RegistForm from "@/components/Form/RegistForm"
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { auth } from '@/components/store/auth';
+import { auth } from '@/store/auth';
 import { toast } from 'react-toastify';
 interface ActionProps {
   label: string;

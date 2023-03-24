@@ -115,7 +115,7 @@ export default function Detail({response}: DetailProps) {
 }
 
 export async function getServerSideProps() {
-  const http = await fetch(`${process.env.HOST}/sample/data_detail.json`);
+  const http = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/detail/product`);
   const dataJson = await http.json();
 
   return {
