@@ -49,7 +49,7 @@ export default function Calculator() {
       </div>
       <button
         className="w-full rounded-md bg-secondary py-2.5"
-        onClick={() => rts.push(`/sale/${rts.query.sale}/calculator`)}
+        // onClick={() => rts.push(`/sale/${rts.query.sale}/calculator`)}
       >
         <span className="text-white font-semibold">Lihat Kalkulasi</span>
       </button>

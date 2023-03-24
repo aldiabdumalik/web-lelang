@@ -41,7 +41,7 @@ export default function ButtonAction({label, style, callback}: ActionProps) {
         level: 'penjual',
       }
     });
-
+    setLogin(true);
   }
 
   const handleOnchange = (text:any, input:any) => {

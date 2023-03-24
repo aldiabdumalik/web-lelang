@@ -1,5 +1,6 @@
 import { useState } from "react"
 import PurchaseCash from "./PurchaseCash";
+import PurchaseKpr from "./PurchaseKpr";
 
 interface PurchaseTypeProps {
   toggle: boolean;
@@ -34,7 +35,11 @@ export default function PurchaseType({toggle, onClose}: PurchaseTypeProps) {
     if (!kpr && !cash) return alert('pilih dulu kak');
     if (cash) {
       setModalCash(true);
-      setOpen(false)
+      setOpen(false);
+    }
+    if (kpr) {
+      setModalKpr(true);
+      setOpen(false);
     }
   }
 
@@ -86,6 +91,7 @@ export default function PurchaseType({toggle, onClose}: PurchaseTypeProps) {
         </div>
       </>}
       {modalCash && <PurchaseCash onOpen={modalCash} onClose={() => onClose(false)} />}
+      {modalKpr && <PurchaseKpr onOpen={modalKpr} onClose={() => onClose(false)} />}
     </>
   )
 }
