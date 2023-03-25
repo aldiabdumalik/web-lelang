@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +14,7 @@ export default function Navbar() {
   const {isAuth, user} = useRecoilValue(auth);
   
   const handleLogout = () => {
-    localStorage.removeItem('_auth');
+    Cookies.remove('_auth');
     router.reload();
   }
 
@@ -67,6 +68,9 @@ export default function Navbar() {
             <div className="">
               <span className="text-sm">{user.fullname}</span>
               <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-md mt-2 w-52">
+                <li onClick={() => router.push('/profile')}>
+                  <span>Profile</span>
+                </li>
                 <li onClick={handleLogout}>
                   <span>Logout</span>
                 </li>
