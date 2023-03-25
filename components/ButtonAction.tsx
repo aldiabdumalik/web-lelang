@@ -1,10 +1,11 @@
+import Cookies from "js-cookie";
 import { useState } from "react";
 import Image from "next/image";
 import RegistForm from "@/components/Form/RegistForm"
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { auth } from '@/store/auth';
 import { toast } from 'react-toastify';
-import { setLocalState } from "@/utils/localStorage";
+import { useRouter } from "next/router";
 
 interface ActionProps {
   label: string;
@@ -13,9 +14,11 @@ interface ActionProps {
 }
 
 export default function ButtonAction({label, style, callback}: ActionProps) {
+  const rts = useRouter();
+
   const [open, setOpen] = useState(false)
   const [form, setForm] = useState('login')
-  const { isAuth, user } = useRecoilValue(auth);
+  const {isAuth, user} = useRecoilValue(auth);
   const [users, setUsers] = useRecoilState(auth);
   const [inputs, setInputs] = useState({
     email: '',
@@ -30,25 +33,19 @@ export default function ButtonAction({label, style, callback}: ActionProps) {
   const notify = () => toast("Wow so easy !");
 
   const LoginSubmit = () => {
-    setUsers({
-      isAuth: true,
-      user: JSON.parse(JSON.stringify({
-        id: 1,
-        username: 'johnwick3',
-        phone: '+62 82150002133',
-        fullname: 'John Wick',
-        email: 'johnwick3@gmail.com',
-        level: 'penjual',
-      }))
-    });
-    setLocalState('_auth', {
+    const user = {
       id: 1,
       username: 'johnwick3',
       phone: '+62 82150002133',
       fullname: 'John Wick',
       email: 'johnwick3@gmail.com',
       level: 'penjual',
-    });
+    }
+
+    setUsers({isAuth: true, user: JSON.parse(JSON.stringify(user))});
+    Cookies.set("_auth", JSON.stringify(user), {expires: 1, path: "/"});
+
+    rts.reload();
   }
 
   const handleOnchange = (text:any, input:any) => {

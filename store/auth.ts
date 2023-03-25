@@ -1,5 +1,5 @@
 import { atom, selector, useSetRecoilState } from 'recoil';
-import { getLocalState } from '@/utils/localStorage';
+import Cookies from 'js-cookie';
 import { useEffect } from 'react';
 
 export const auth = atom({
@@ -19,14 +19,14 @@ export const authState = selector({
 });
 
 export function initAuth() {
-  const cok = getLocalState('_auth');
+  const cok = Cookies.get('_auth');
   if (cok) {
     const setUserAuth = useSetRecoilState(auth);
 
     useEffect(() => {
       setUserAuth({
         isAuth: true,
-        user: JSON.parse(JSON.stringify(cok))
+        user: JSON.parse(cok)
       });
     }, []);
   }

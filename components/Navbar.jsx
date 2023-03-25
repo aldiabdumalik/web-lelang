@@ -2,7 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ButtonAction from "@/components/ButtonAction";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import { useRecoilValue } from 'recoil';
 import { auth } from '@/store/auth';
 
@@ -10,8 +10,12 @@ import { auth } from '@/store/auth';
 export default function Navbar() {
   const router = useRouter()
   const [open, setOpen] = useState(false);
-  // const [isLogin, setIsLogin] = useState(true);
   const {isAuth, user} = useRecoilValue(auth);
+  
+  const handleLogout = () => {
+    localStorage.removeItem('_auth');
+    router.reload();
+  }
 
   return (
     <div className='bg-white fixed top-0 z-50 sm:z-auto w-full sm:relative'>
@@ -56,11 +60,18 @@ export default function Navbar() {
             <span className="text-sm">Chat</span>
           </div>
           <div className="h-7 border"></div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 dropdown dropdown-end cursor-pointer" tabIndex={0}>
             <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
               <span className="font-semibold text-white text-xs">JW</span>
             </div>
-            <span className="text-sm">{user.fullname}</span>
+            <div className="">
+              <span className="text-sm">{user.fullname}</span>
+              <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-md mt-2 w-52">
+                <li onClick={handleLogout}>
+                  <span>Logout</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>}
       </div>
