@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ItemProps {
   id?: number;
@@ -8,7 +9,7 @@ interface ItemProps {
 
 export default function ItemOtomotif({id, title}: ItemProps) {
   return (
-    <div className="flex flex-col gap-6 py-6 px-0 md:px-6" key={id}>
+    <Link href={"/sale/1/otomotif"} className="flex flex-col gap-6 py-6 px-0 md:px-6" key={id}>
       <div className="relative">
         <div className="rounded-md overflow-hidden">
           <Image
@@ -60,6 +61,6 @@ export default function ItemOtomotif({id, title}: ItemProps) {
           <Image src={'/icons/love_orange.svg'} width={28} height={28} alt="" priority />
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
