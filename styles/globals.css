@@ -225,3 +225,16 @@ input:disabled {
 .nav-link .active {
   @apply outline outline-2 rounded-md outline-primary text-primary font-semibold;
 }
+
+.asset-nav .active .circle-number {
+  @apply bg-primary text-white;
+}
+.asset-nav .active p {
+  @apply font-semibold text-primary-text;
+}
+.radio:checked, .radio[aria-checked=true] {
+  @apply bg-primary;
+}
+.asset-change .active {
+  @apply border-primary60 bg-primary10;
+}

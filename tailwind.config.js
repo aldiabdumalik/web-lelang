@@ -16,7 +16,9 @@ module.exports = {
         'secondary-text': '#73808C',
         "neutral-20": "#F9FAFB",
         "tertiary": "#98A2B3",
-        "bluesky": "#B7DFFE"
+        "bluesky": "#B7DFFE",
+        "primary10": "#EAF6FF",
+        "primary60": "#00529C",
       },
       height: {
         '720px': '45rem',
