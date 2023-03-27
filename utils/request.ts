@@ -17,9 +17,7 @@ export default async function request({url, method, body, headers, queryParams}:
 
   const _token = await redis.get('_token');
   defaultHeader = {...defaultHeader, ...{'Authorization' : 'Bearer ' + _token}};
-
-  // redis.set('_token', 'df287dfc1406ed2b692e1c2c783bb5cec97eac53151ee1d9810397aa0afa0d89', 'EX', 1800);
-  // console.log(_token);
+  console.log(_token);
 
   const requestHeaders = {...defaultHeader, ...headers};
 
