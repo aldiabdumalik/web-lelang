@@ -1,0 +1,24 @@
+{
+  "title": "TOYOTA AVANZA 1.3 G",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisi, purus dui purus turpis urna. Vel curabitur porttitor et vel praesent faucibus ut sodales. Ac adipiscing erat interdum sed commodo egestas.",
+  "images": [
+    "/img/dump/detail/mobil-1.png",
+    "/img/dump/detail/mobil-2.png",
+    "/img/dump/detail/mobil-3.png",
+    "/img/dump/detail/mobil-4.png"
+  ],
+  "price": 1200000000,
+  "location": {
+    "label": "Sleman, Yogyakarta",
+    "latitude": 0,
+    "longitude": 0
+  },
+  "facility": {
+    "year": "2019",
+    "type": "AT",
+    "engine": "1.3",
+    "distance": "50000",
+    "energy": "Bensin",
+    "color": "Silver Metalik"
+  }
+}
