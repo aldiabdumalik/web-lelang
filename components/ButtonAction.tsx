@@ -6,6 +6,7 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import { auth } from '@/store/auth';
 import { toast } from 'react-toastify';
 import { useRouter } from "next/router";
+// import redis from "@/plugins/redis";
 
 interface ActionProps {
   label: string;
@@ -43,7 +44,8 @@ export default function ButtonAction({label, style, callback}: ActionProps) {
     }
 
     setUsers({isAuth: true, user: JSON.parse(JSON.stringify(user))});
-    Cookies.set("_auth", JSON.stringify(user), {expires: 1, path: "/"});
+    Cookies.set("_auth", JSON.stringify(user), {expires: 1/48, path: "/"});
+    // redis.set('_token', 'df287dfc1406ed2b692e1c2c783bb5cec97eac53151ee1d9810397aa0afa0d89', 'EX', 1800);
 
     rts.reload();
   }
