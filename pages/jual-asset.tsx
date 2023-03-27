@@ -54,17 +54,9 @@ function JualAsset() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row items-center md:gap-x-4">
-                <div className="flex items-center justify-center cursor-pointer py-2.5 border border-primary rounded-md flex-1 gap-x-2">
-                  <span className="text-primary font-semibold">Kembali ke Home</span>
-                </div>
-                <div className="flex items-center justify-center cursor-pointer py-2.5 bg-primary rounded-md flex-1 gap-x-2">
-                  <span className="text-white font-semibold">Selanjutnya</span>
-                </div>
-              </div>
             </div>
             {/* Form 2 */}
-            <div id="form-2" className="">
+            <div id="form-2" className="hidden">
               <div className="flex flex-col rounded-md border p-2 md:p-6 gap-y-4">
                 <div className="flex gap-x-1 items-center">
                   <h4 className="font-semibold text-lg md:text-xl text-primary">Tipe Properti</h4>
@@ -117,6 +109,74 @@ function JualAsset() {
               </div>
 
             </div>
+            {/* Form 3 */}
+            <div id="form-1" className="">
+              <div className="flex flex-col rounded-md border p-2 md:p-6 gap-y-4">
+                <div className="flex gap-x-1 items-center">
+                  <h4 className="font-semibold text-lg md:text-xl text-primary">Detail</h4>
+                  <span className="text-base text-red-500">*</span>
+                </div>
+                <div className="flex flex-row items-start md:gap-x-4">
+                  <div className="flex flex-col md:flex-row md:gap-x-4">
+                    <div className="h-28 w-28">
+                      <Image src={'/img/form/map.svg'} alt="map" width={0} height={0} object-fit={"contain"} className="md:w-28 md:h-28" />
+                    </div>
+                    <div className="flex flex-col">
+                      <p className="font-semibold text-base md:text-lg">Gondangdia Residence</p>
+                      <p className="text-sm md:text-base font-normal text-secondary-text">Jl. Raya Gondangdia V <br/>Jakarta Pusat 54000</p>
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-secondary text-sm font-semibold">Edit</span>
+                  </div>
+                </div>
+                <hr className="border border-neutral50" />
+                <div className="flex flex-row items-center w-full">
+                  <label className="font-semibold text-base text-primary-text w-52">Nama Properti</label>
+                  <input type="text" className="input border border-neutral40 flex-1" placeholder="Nama Properti" />
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col rounded-md border p-2 md:p-6 gap-y-4">
+              <div className="flex flex-row items-start w-full">
+                <div className="flex items-center gap-x-1 w-52">
+                  <label className="font-semibold text-xl text-primary">Deskripsi</label>
+                  <span className="text-error">*</span>
+                </div>
+                <textarea className="textarea border border-neutral40 flex-1" placeholder="Tulis deskripsi properti"></textarea>
+              </div>
+            </div>
+
+            <div className="flex flex-col rounded-md border p-2 md:p-6 gap-y-4">
+              <div className="flex flex-col items-start w-full gap-y-4">
+                <div className="flex items-center gap-x-1 w-52">
+                  <label className="font-semibold text-xl text-primary">Detail Properti</label>
+                  <span className="text-error">*</span>
+                </div>
+                <div className="flex flex-row">
+                  <div className="flex items-center gap-x-2 w-52">
+                    <p className="font-bold text-base text-neutral100">LT</p>
+                    <p className="font-medium text-base text-primary-text">Luas Tanah</p>
+                  </div>
+                  <div className="flex items-center">
+                    <input type="text" className="input border border-neutral40 rounded-tr-none rounded-br-none" placeholder="Masukan Luas Tanah" />
+                    <div className="bg-neutral40 py-3 px-2.5 rounded-tr-md rounded-br-md text-tertiary">m2</div>
+                  </div>
+                </div>
+                <div className="flex flex-row">
+                  <div className="flex items-center gap-x-2 w-52">
+                    <p className="font-bold text-base text-neutral100">LB</p>
+                    <p className="font-medium text-base text-primary-text">Luas Bangunan</p>
+                  </div>
+                  <div className="flex items-center">
+                    <input type="text" className="input border border-neutral40 rounded-tr-none rounded-br-none" placeholder="Masukan Luas Bangunan" />
+                    <div className="bg-neutral40 py-3 px-2.5 rounded-tr-md rounded-br-md text-tertiary">m2</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             <div className="flex flex-col md:flex-row items-center md:gap-x-4">
               <div className="flex items-center justify-center cursor-pointer py-2.5 border border-primary rounded-md flex-1 gap-x-2">
                 <span className="text-primary font-semibold">Kembali ke Home</span>
