@@ -1,22 +1,25 @@
 import { stringify } from "querystring"
-import { getLocalState } from "./localStorage"
+import redis from "@/plugins/redis";
 
-export default async function request({
-  url = '',
-  method = 'GET',
-  body = {},
-  headers = {},
-  queryParams = {}
-}) {
+interface RequestProps {
+  url: string;
+  method: string | 'GET';
+  body?: any;
+  headers?: any;
+  queryParams?: any;
+}
+
+export default async function request({url, method, body, headers, queryParams}: RequestProps) {
   let defaultHeader = {
     'Accept': 'application/json',
     'Content-Type' : 'application/json',
   }
 
-  if (typeof window !== 'undefined') {
-    const USER_TOKEN = localStorage.getItem('_token');
-    defaultHeader = {...defaultHeader, ...{'Authorization' : 'Bearer ' + USER_TOKEN}};
-  }
+  const _token = await redis.get('_token');
+  defaultHeader = {...defaultHeader, ...{'Authorization' : 'Bearer ' + _token}};
+
+  // redis.set('_token', 'df287dfc1406ed2b692e1c2c783bb5cec97eac53151ee1d9810397aa0afa0d89', 'EX', 1800);
+  // console.log(_token);
 
   const requestHeaders = {...defaultHeader, ...headers};
 
@@ -33,13 +36,12 @@ export default async function request({
     options = {...options, ...{body: body ? JSON.stringify(body) : null }};
   }
 
-  return fetch(url, options).then(res => {
+  return fetch(url, options).then(async res => {
     if (res.ok) {
       return res.json();
     } else {
-      return res.json().then(function(json) {
-        return Promise.reject(json);
-      });
+      const json = await res.json();
+      return await Promise.reject(json);
     }
   });
 }
